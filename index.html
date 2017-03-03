@@ -5,18 +5,13 @@
   <title>NYC Ordering form</title>
   <script src="https://use.typekit.net/fvr1cxh.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-  <link rel="stylesheet" media="all" href="auth.css" />
+  <link rel="stylesheet" media="all" href="css/auth.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
 
-<div class="container">
-  <div class="navbar navbar-static-top">
-    <div class="navbar-inner">
-      <a class="brand" href="/">NYC School Pricing</a>
-    </div>
-  </div>
+<div class="container" id="app">
 
   <div id="messages"></div>
 
@@ -28,103 +23,29 @@
       </div>
     </div>
     <p>&nbsp;</p>
-    <div class="row-fluid">
-      <div class="span6" style="text-align: center">
-        School Type: <br />
-        <select name="schoolType" id="schoolType" style="width: 75%">
-          <option value="HS" selected=selected>High School</option>
-          <option value="K8">Elementary or Junior High School (K-8)</option>
-        </select>
-      </div>
-      <div class="span6" style="text-align: center">
-        Amount of Students: <br />
-        <select name="Students" id="Students" style="width: 75%">
-          <option value="0">Under 650 Students</option>
-          <option value="650">650 – 1500 Students</option>
-          <option value="1500" selected=selected>Over 1500 Students</option>
-        </select>
-      </div>
-    </div>
+
+
+    <school-options></school-options>
+
     <p>&nbsp;</p>
 
     <div class="row-fluid client-table-container">
       <div class="span8" style="padding: 20px">
+
         <h2>Packages</h2>
         <p>The most popular packages at our best prices</p>
-        <table class="table table-condensed client-table">
-          <tr>
-            <td><input type="radio" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="radio" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="radio" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="radio" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-        </table>
+        <package-list></package-list>
 
         <h2>Solutions</h2>
-        <table class="table table-condensed client-table">
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-        </table>
+        <solutions-list></solutions-list>
 
         <h2>Services</h2>
-        <table class="table table-condensed client-table">
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td>(1 &amp; 2)</td>
-            <td>$7500</td>
-          </tr>
-        </table>
+        <services-list></services-list>
+
       </div>
       <div class="span4">
+        <h2>Cart</h2>
         <div id="cart" style="clear: both">
-          <p>Cart:</p>
           <p class="cartItem">Package Addon: Add PD to any Package</p>
           <p class="subTotal">$1,500.00</p>
           <p class="cartItem">Package Addon: Add 3 PDs to any Package</p>
@@ -132,14 +53,146 @@
           <p class="cartItem">Total Price:</p>
           <p class="subTotal" style="font-weight: bold !important">$4,500.00</p>
         </div>
-        <input name="commit" value="Order Now" class="form-button" type="submit">
+        <p>&nbsp;</p>
+        <div>
+          <div>
+            <label>
+                DBN
+                <br />
+                <input type="text" value="" placeholder="e.g. 12X345">
+            </label>
+          </div>
+          <div>
+            <label>
+                School Name
+                <br />
+                 <input type="text" value="">
+            </label>
+          </div>
+          <div>
+            <label>
+                First Name
+                <br />
+                <input type="text" value="">
+            </label>
+          </div>
+          <div>
+            <label>
+                Last Name
+                <br />
+                <input type="text" value="">
+            </label>
+          </div>
+          <div>
+            <label>
+                Email
+                <br />
+                <input type="text" value="">
+            </label>
+          </div>
+          <div>
+            <label>
+                Telephone
+                <br />
+                <input type="text" value="">
+            </label>
+          </div>
+          <div>
+            <label>
+                Principal's Name
+                <br />
+                <input type="text" value="">
+            </label>
+          </div>
+
+          <div>
+            <input name="commit" value="Submit Order Now" class="form-button" type="submit">
+          </div>
+
+        </div>
+
       </div>
+
     </div>
 
 
   </div>
 
 </div>
+
+<template id="school-options-template">
+  <div class="row-fluid">
+    <div class="span6">
+      <h4>School Type</h4>
+      <label>
+        <input type="radio" name="schoolType" value="HS" v-model="data.schoolType">&nbsp;&nbsp;
+        High School
+      </label>
+      <label>
+        <input type="radio" name="schoolType" value="K8" v-model="data.schoolType">&nbsp;&nbsp;
+        Elementary or Junior High School (K-8)
+      </label>
+    </div>
+    <div class="span6">
+      <h4>Amount of Students</h4>
+      <label>
+        <input type="radio" name="students" v-model="data.totalStudents" value="under650">&nbsp;&nbsp;
+        Under 650 Students
+      </label>
+      <label>
+        <input type="radio" name="students" v-model="data.totalStudents" value="650-1500">&nbsp;&nbsp;
+        650 - 1500 Students
+      </label>
+      <label>
+        <input type="radio" name="students" v-model="data.totalStudents" value="over1500">&nbsp;&nbsp;
+        Over 1500 Students
+      </label>
+    </div>
+  </div>
+</template>
+
+<template id="packages-template">
+  <div>
+    <table class="table table-condensed client-table">
+      <tr v-for="item in filteredList">
+        <td><input type="radio" /></td>
+        <td>{{ item.solutions.toString() }}</td>
+        <td>{{ item.basePrice }}</td>
+      </tr>
+    </table>
+  </div>
+</template>
+
+<template id="solutions-template">
+  <div>
+    <table class="table table-condensed client-table">
+      <tr v-for="item in filteredList">
+        <td><input type="radio" /></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.modal }}</td>
+      </tr>
+    </table>
+  </div>
+</template>
+
+<template id="services-template">
+  <div>
+    <table class="table table-condensed client-table">
+      <tr v-for="item in filteredList">
+        <td><input type="radio" /></td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.modal }}</td>
+      </tr>
+    </table>
+  </div>
+</template>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="js/async.min.2.1.4.js"></script>
+  <script type="text/javascript" src="js/moment.js"></script>
+  <script type="text/javascript" src="js/script.js?r=0.4"></script>
 
 </body>
 </html>
