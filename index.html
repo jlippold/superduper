@@ -6,6 +6,7 @@
   <script src="https://use.typekit.net/fvr1cxh.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <link rel="stylesheet" media="all" href="css/auth.css" />
+  <link rel="stylesheet" media="all" href="css/style.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -32,19 +33,21 @@
     <div class="row-fluid client-table-container">
       <div class="span8" style="padding: 20px">
 
-        <h2>Packages</h2>
+        <h3>Packages</h3>
         <p>The most popular packages at our best prices</p>
         <package-list></package-list>
 
-        <h2>Solutions</h2>
+        <p>&nbsp;</p>
+        <h3>Solutions</h2>
         <solutions-list></solutions-list>
 
-        <h2>Services</h2>
+        <p>&nbsp;</p>
+        <h3>Services</h3>
         <services-list></services-list>
 
       </div>
       <div class="span4">
-        <h2>Cart</h2>
+        <h3>Cart</h3>
         <div id="cart" style="clear: both">
           <p class="cartItem">Package Addon: Add PD to any Package</p>
           <p class="subTotal">$1,500.00</p>
@@ -121,8 +124,8 @@
 </div>
 
 <template id="school-options-template">
-  <div class="row-fluid">
-    <div class="span6">
+  <div class="row-fluid school-options client-table-container">
+    <div class="span8">
       <h4>School Type</h4>
       <label>
         <input type="radio" name="schoolType" value="HS" v-model="data.schoolType">&nbsp;&nbsp;
@@ -133,7 +136,8 @@
         Elementary or Junior High School (K-8)
       </label>
     </div>
-    <div class="span6">
+
+    <div class="span4">
       <h4>Amount of Students</h4>
       <label>
         <input type="radio" name="students" v-model="data.totalStudents" value="under650">&nbsp;&nbsp;

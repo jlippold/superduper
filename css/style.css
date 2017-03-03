@@ -1,0 +1,13 @@
+
+div.school-options label {
+	margin-left: 30px;
+	padding-top: 7px;
+}
+
+div.school-options > div {
+	padding: 20px 0;
+}
+
+div.school-options input {
+	margin-top: -4px;
+}
