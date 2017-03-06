@@ -144,7 +144,7 @@
         Under 650 Students
       </label>
       <label>
-        <input type="radio" name="students" v-model="data.totalStudents" value="650-1500">&nbsp;&nbsp;
+        <input type="radio" name="students" v-model="data.totalStudents" value="from650to1500">&nbsp;&nbsp;
         650 - 1500 Students
       </label>
       <label>
@@ -159,9 +159,13 @@
   <div>
     <table class="table table-condensed client-table">
       <tr v-for="item in filteredList">
-        <td><input type="radio" /></td>
-        <td>{{ item.solutions.toString() }}</td>
-        <td>{{ item.basePrice }}</td>
+        <td>
+            <label>
+              <input type="radio" name="package" /> 
+              {{ item.name }}
+            </label>
+        </td>
+        <td>{{ priceForItem(item.prices) }}</td>
       </tr>
     </table>
   </div>
@@ -171,8 +175,15 @@
   <div>
     <table class="table table-condensed client-table">
       <tr v-for="item in filteredList">
-        <td><input type="radio" /></td>
-        <td>{{ item.name }}</td>
+        <td>
+            <label>
+              <input type="checkbox" 
+              v-on:click="selectSolutions"
+              v-bind:value="{id: item.id}" 
+              v-model="data.solutions"> 
+              {{ item.name }}
+            </label>
+        </td>
         <td>{{ item.modal }}</td>
       </tr>
     </table>
