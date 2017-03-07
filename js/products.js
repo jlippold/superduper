@@ -2,7 +2,7 @@ var product = {
 	packages: {
 		"HS": {
 			items: [{
-				name: "IO Classroom and Compass",
+				name: "A: IO Classroom and Compass",
 				offerings: ["classroom", "compass"],
 				prices: [{
 					totalStudents: "under650",
@@ -15,8 +15,8 @@ var product = {
 					price: 8500
 				}]
 			}, {
-				name: "IO Classroom and Assessment, Insights or Talent",
-				offerings: ["classroom", ["assessment", "insights", "talent"]],
+				name: "B1: IO Classroom and Assessment",
+				offerings: ["classroom", "assessment"],
 				prices: [{
 					totalStudents: "under650",
 					price: 9000
@@ -28,8 +28,8 @@ var product = {
 					price: 11000
 				}]
 			}, {
-				name: "IO Classroom, Compass and Assessment",
-				offerings: ["classroom", "compass", "assessment"],
+				name: "B2: IO Classroom, Insights or Talent",
+				offerings: ["classroom", ["insights", "talent"]],
 				prices: [{
 					totalStudents: "under650",
 					price: 12500
@@ -41,8 +41,8 @@ var product = {
 					price: 14500
 				}]
 			}, {
-				name: "IO Classroom, Compass and Insights or Talent",
-				offerings: ["classroom", "compass", ["insights", "talent"]],
+				name: "C1: IO Classroom, Compass and Assessment",
+				offerings: ["classroom", "compass", "assessment"],
 				prices: [{
 					totalStudents: "under650",
 					price: 10000
@@ -54,8 +54,8 @@ var product = {
 					price: 11000
 				}]
 			}, {
-				name: "IO Classroom, Compass, Assessment and Insights or Talent",
-				offerings: ["classroom", "compass", "assessment", ["insights", "talent"]],
+				name: "C2: IO Classroom, Compass, Insights or Talent",
+				offerings: ["classroom", "compass", ["insights", "talent"]],
 				prices: [{
 					totalStudents: "under650",
 					price: 15000
@@ -67,8 +67,8 @@ var product = {
 					price: 18000
 				}]
 			}, {
-				name: "IO Classroom, Compass, Insights and Talent",
-				offerings: ["classroom", "compass", "insights", "talent"],
+				name: "D1: IO Classroom, Compass, Assessment, Insights or Talent",
+				offerings: ["classroom", "compass", "assessment", ["insights", "talent"]],
 				prices: [{
 					totalStudents: "under650",
 					price: 12500
@@ -80,8 +80,8 @@ var product = {
 					price: 14500
 				}]
 			}, {
-				name: "IO Classroom, Compass, Assessment, Insights and Talent",
-				offerings: ["classroom", "compass", "assessment", "insights", "talent"],
+				name: "D2: IO Classroom, Compass, Insights and Talent",
+				offerings: ["classroom", "compass", "insights", "talent"],
 				prices: [{
 					totalStudents: "under650",
 					price: 17500
@@ -93,7 +93,20 @@ var product = {
 					price: 21500
 				}]
 			}, {
-				name: "IO Classroom, Compass, Assessment, Insights, Talent and Quality Review",
+				name: "E: IO Classroom, Compass, Assessment, Insights, and Talent",
+				offerings: ["classroom", "compass", "assessment", "insights", "talent"],
+				prices: [{
+					totalStudents: "under650",
+					price: 21500
+				}, {
+					totalStudents: "from650to1500",
+					price: 24500
+				}, {
+					totalStudents: "over1500",
+					price: 27500
+				}]
+			}, {
+				name: "F: IO Classroom, Compass, Assessment, Insights, Talent and Quality Review",
 				offerings: ["classroom", "compass", "assessment", "insights", "talent", "qualityReview"],
 				prices: [{
 					totalStudents: "under650",
@@ -109,7 +122,7 @@ var product = {
 		},
 		"K8": {
 			items: [{
-				name: "IO Classroom and Insights",
+				name: "A: IO Classroom and Insights",
 				offerings: ["classroom", "insights"],
 				prices: [{
 					totalStudents: "under650",
@@ -122,7 +135,7 @@ var product = {
 					price: 8500
 				}]
 			}, {
-				name: "IO Classroom and Talent",
+				name: "B1: IO Classroom and Talent",
 				offerings: ["classroom", "talent"],
 				prices: [{
 					totalStudents: "under650",
@@ -135,7 +148,7 @@ var product = {
 					price: 7500
 				}]
 			}, {
-				name: "IO Classroom and Assessment",
+				name: "B2: IO Classroom and Assessment",
 				offerings: ["classroom", "assessment"],
 				prices: [{
 					totalStudents: "under650",
@@ -148,7 +161,7 @@ var product = {
 					price: 12500
 				}]
 			}, {
-				name: "IO Classroom, Insights and Talent",
+				name: "C1: IO Classroom, Insights and Talent",
 				offerings: ["classroom", "insights", "talent"],
 				prices: [{
 					totalStudents: "under650",
@@ -161,7 +174,7 @@ var product = {
 					price: 11000
 				}]
 			}, {
-				name: "IO Classroom, Insights and Assessment",
+				name: "C2: IO Classroom, Insights and Assessment",
 				offerings: ["classroom", "insights", "assessment"],
 				prices: [{
 					totalStudents: "under650",
@@ -174,7 +187,7 @@ var product = {
 					price: 14500
 				}]
 			}, {
-				name: "IO Classroom, Insights, Assessment and Talent",
+				name: "D1: IO Classroom, Insights, Assessment and Talent",
 				offerings: ["classroom", "insights", "assessment", "talent"],
 				prices: [{
 					totalStudents: "under650",
@@ -187,7 +200,7 @@ var product = {
 					price: 18000
 				}]
 			}, {
-				name: "IO Classroom, Insights, Assessment, Talent and QR Prep",
+				name: "E: IO Classroom, Insights, Assessment, Talent and QR Prep",
 				offerings: ["classroom", "insights", "assessment", "talent", "qualityReview"],
 				prices: [{
 					totalStudents: "under650",
