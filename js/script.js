@@ -115,9 +115,15 @@ $(document).ready(function() {
 				} else { //this isn't a package, it's build your own
 					state.package = null;
 					state.solutions = [];
-					state.offerings = product.offerings.items.filter(function(item) {
+					var offerings = product.offerings.items.filter(function(item) {
 						return item.valid && item.valid.indexOf(state.schoolType) > -1
 					});
+					offerings.forEach(function(item) {
+						item.disabled = false;
+						item.radio = false;
+						item.selected = false;
+					});
+					state.offerings = offerings.slice();
 				}
 				//select the first option avaliable
 				setTimeout(function() {
