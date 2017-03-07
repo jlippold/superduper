@@ -553,7 +553,9 @@ var product = {
 var state = {
 	schoolType: "HS",
 	totalStudents: "under650",
-	solutions: []
+	solutions: [], //selected products
+	package: null, //selected package
+	offerings: [] //possible products for package
 }
 
 $(document).ready(function() {
@@ -577,32 +579,72 @@ $(document).ready(function() {
 		computed: {
 			filteredList: function() {
 				var schoolType = state.schoolType;
-				return this.data[schoolType].items.slice();
+				var list = this.data[schoolType].items.slice();
+				list.unshift({
+					name: "Build Your own package",
+					prices: "-"
+				});
+				return list;
 			}
 		},
 		methods: {
 			priceForItem: function(prices) {
-				var totalStudents = state.totalStudents;
-				var price;
-				prices.forEach(function(pricePoint) {
-					if (pricePoint.totalStudents == totalStudents) {
-						price = pricePoint.price;
-					}
-				})
-				return price.formatMoney(0);
+				if (Array.isArray(prices)) {
+					var totalStudents = state.totalStudents;
+					var price;
+					prices.forEach(function(pricePoint) {
+						if (pricePoint.totalStudents == totalStudents) {
+							price = pricePoint.price;
+						}
+					});
+					return price.formatMoney(0);
+				} else {
+					return prices;
+				}
 			},
 			selectPackage: function(item) {
-				var solutions = [];
-				item.offerings.forEach(function(offering) {
-					if (Array.isArray(offering)) {
-						solutions.push(offering[0]);
-					} else {
-						solutions.push(offering);
-					}
-				});
 
-				state.solutions = solutions.slice();
-				console.log(state.solutions);
+				var solutions = [];
+				var offerings = [];
+
+				var getProduct = function(itemId) {
+					var foundItem;
+					product.offerings.items.forEach(function(item) {
+						if (item.valid && item.valid.indexOf(state.schoolType) > -1 && item.id == itemId) {
+							foundItem = item;
+						}
+					});
+					return foundItem;
+				};
+				if (item.offerings) {
+					item.offerings.forEach(function(offering) {
+						//selected solutions
+						var thisSolution;
+						if (Array.isArray(offering)) {
+							thisSolution = offering[0];
+						} else {
+							thisSolution = offering;
+						}
+
+						solutions.push(thisSolution);
+
+						//find possible solutions from original object
+						var item = getProduct(thisSolution);
+						if (item) {
+							offerings.push(item);
+						}
+					});
+
+					state.package = item;
+					state.solutions = solutions.slice();
+					state.offerings = offerings.slice();
+				} else { //build your own
+					state.package = null;
+					state.solutions = [];
+					state.offerings = product.offerings.items.filter(function(item) {
+						return item.valid && item.valid.indexOf(state.schoolType) > -1
+					});
+				}
 			}
 		}
 	});
@@ -613,14 +655,14 @@ $(document).ready(function() {
 			return state;
 		},
 		computed: {
-			getSolutions: function() {
-				return product.offerings.items.filter(function(item) {
-					return item.type == "solution" && item.valid.indexOf(state.schoolType) > -1
+			getServices: function() {
+				return state.offerings.filter(function(item) {
+					return item.type == "service" && item.valid.indexOf(state.schoolType) > -1
 				});
 			},
-			getServices: function() {
-				return product.offerings.items.filter(function(item) {
-					return item.type == "service" && item.valid.indexOf(state.schoolType) > -1
+			getSolutions: function() {
+				return state.offerings.filter(function(item) {
+					return item.type == "solution" && item.valid.indexOf(state.schoolType) > -1
 				});
 			}
 		},
