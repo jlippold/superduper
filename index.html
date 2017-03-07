@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
   <title>NYC Ordering form</title>
   <script src="https://use.typekit.net/fvr1cxh.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -160,8 +159,11 @@
     <table class="table table-condensed client-table">
       <tr v-for="item in filteredList">
         <td>
+
             <label>
-              <input type="radio" name="package" /> 
+              <input type="radio" name="package"  
+                v-on:click="selectPackage(item)"
+                 /> 
               {{ item.name }}
             </label>
         </td>
@@ -177,14 +179,11 @@
       <tr v-for="item in filteredList">
         <td>
             <label>
-              <input type="checkbox" 
-              v-on:click="selectSolutions"
-              v-bind:value="{id: item.id}" 
-              v-model="data.solutions"> 
+              <input type="checkbox" v-bind:value="item.id" :checked="checkStatus(item)"> 
               {{ item.name }}
             </label>
         </td>
-        <td>{{ item.modal }}</td>
+        <td>{{ priceForItem(item) }}</td>
       </tr>
     </table>
   </div>

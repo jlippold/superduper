@@ -5,12 +5,7 @@ var vm;
 	http://www.datacation.com/register/NYCDOE/
 */
 
-var state = {
-	user: {
-		schoolType: "HS",
-		totalStudents: "under650",
-		solutions: []
-	},
+var product = {
 	packages: {
 		"HS": {
 			items: [{
@@ -214,106 +209,351 @@ var state = {
 			}]
 		}
 	},
-	offerings: [{
-		id: "classroom",
-		name: "IO Classroom",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "solution"
-	}, {
-		id: "compass",
-		name: "Compass",
-		modal: "#classroom",
-		valid: ["HS"],
-		type: "solution"
-	}, {
-		id: "insights",
-		name: "IO Insights",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "solution"
-	}, {
-		id: "assessment",
-		name: "IO Assessment",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "solution"
-	}, {
-		id: "talent",
-		name: "IO Talent",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "solution"
-	}, {
-		id: "gradeCam",
-		name: "GradeCam",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		depends: ["solution3"],
-		type: "solution"
-	}, {
-		id: "k1",
-		name: "K-1",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		depends: ["solution3"],
-		type: "solution"
-	}, {
-		id: "itemBank",
-		name: "Item Bank",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		depends: ["solution3"],
-		type: "solution"
-	}, {
-		id: "quickChecks",
-		name: "Quick Checks",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		depends: ["solution3"],
-		type: "solution"
-	}, {
-		id: "ngss",
-		name: "NGSS",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		depends: ["solution3"],
-		type: "solution"
-	}, {
-		id: "qualityReview",
-		name: "Quality Review (QR) Prep",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "service"
-	}, {
-		id: "stars",
-		name: "STARS Program",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "service"
-	}, {
-		id: "professionalDevelopmentx1",
-		name: "Professional Development Session",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "service"
-	}, {
-		id: "professionalDevelopmentx3",
-		name: "Block of 3 Professional Development",
-		modal: "#classroom",
-		valid: ["HS", "K8"],
-		type: "service"
-	}, {
-		id: "addedProfessionalDevelopmentx1",
-		name: "1 Professional Development Session",
-		modal: "#classroom",
-		type: "packageAdd"
-	}, {
-		id: "addedProfessionalDevelopmentx3",
-		name: "Block of 3 Professional Development Sessions",
-		modal: "#classroom",
-		type: "packageAdd"
-	}]
+	offerings: {
+		items: [{
+			id: "classroom",
+			name: "IO Classroom",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "solution",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 4250
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 5000
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 4250
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 5000
+				}]
+			}
+		}, {
+			id: "compass",
+			name: "Compass",
+			modal: "#classroom",
+			valid: ["HS"],
+			type: "solution",
+			prices: {
+				"HS": [{
+					totalStudents: "under650",
+					price: 4250
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 5000
+				}]
+			}
+		}, {
+			id: "insights",
+			name: "IO Insights",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "solution",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 4250
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 5000
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 3000
+				}, {
+					totalStudents: "from650to1500",
+					price: 3500
+				}, {
+					totalStudents: "over1500",
+					price: 4000
+				}]
+			}
+		}, {
+			id: "assessment",
+			name: "IO Assessment",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "solution",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 5500
+				}, {
+					totalStudents: "from650to1500",
+					price: 6500
+				}, {
+					totalStudents: "over1500",
+					price: 7500
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 5500
+				}, {
+					totalStudents: "from650to1500",
+					price: 6500
+				}, {
+					totalStudents: "over1500",
+					price: 7500
+				}]
+			}
+		}, {
+			id: "talent",
+			name: "IO Talent",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "solution",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 3000
+				}, {
+					totalStudents: "from650to1500",
+					price: 3500
+				}, {
+					totalStudents: "over1500",
+					price: 4000
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 3000
+				}, {
+					totalStudents: "from650to1500",
+					price: 3500
+				}, {
+					totalStudents: "over1500",
+					price: 4000
+				}]
+			}
+		}, {
+			id: "gradeCam",
+			name: "GradeCam",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			depends: ["solution3"],
+			type: "solution",
+			prices: {}
+		}, {
+			id: "k1",
+			name: "K-1",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			depends: ["solution3"],
+			type: "solution",
+			prices: {}
+		}, {
+			id: "itemBank",
+			name: "Item Bank",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			depends: ["solution3"],
+			type: "solution",
+			prices: {}
+		}, {
+			id: "quickChecks",
+			name: "Quick Checks",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			depends: ["solution3"],
+			type: "solution",
+			prices: {}
+		}, {
+			id: "ngss",
+			name: "NGSS",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			depends: ["solution3"],
+			type: "solution",
+			prices: {}
+		}, {
+			id: "qualityReview",
+			name: "Quality Review (QR) Prep",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "service",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 5500
+				}, {
+					totalStudents: "from650to1500",
+					price: 6500
+				}, {
+					totalStudents: "over1500",
+					price: 7500
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 5500
+				}, {
+					totalStudents: "from650to1500",
+					price: 6500
+				}, {
+					totalStudents: "over1500",
+					price: 7500
+				}]
+			}
+		}, {
+			id: "stars",
+			name: "STARS Program",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "service",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 4000
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 5000
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 4000
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 5000
+				}]
+			}
+		}, {
+			id: "professionalDevelopmentx1",
+			name: "Professional Development Session",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "service",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 2000
+				}, {
+					totalStudents: "from650to1500",
+					price: 2000
+				}, {
+					totalStudents: "over1500",
+					price: 2000
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 2000
+				}, {
+					totalStudents: "from650to1500",
+					price: 2000
+				}, {
+					totalStudents: "over1500",
+					price: 2000
+				}]
+			}
+		}, {
+			id: "professionalDevelopmentx3",
+			name: "Block of 3 Professional Development",
+			modal: "#classroom",
+			valid: ["HS", "K8"],
+			type: "service",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 4500
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 4500
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 4500
+				}, {
+					totalStudents: "from650to1500",
+					price: 4500
+				}, {
+					totalStudents: "over1500",
+					price: 4500
+				}]
+			}
+		}, {
+			id: "addedProfessionalDevelopmentx1",
+			name: "1 Professional Development Session",
+			modal: "#classroom",
+			type: "packageAdd",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 1500
+				}, {
+					totalStudents: "from650to1500",
+					price: 1500
+				}, {
+					totalStudents: "over1500",
+					price: 1500
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 1500
+				}, {
+					totalStudents: "from650to1500",
+					price: 1500
+				}, {
+					totalStudents: "over1500",
+					price: 1500
+				}]
+			}
+		}, {
+			id: "addedProfessionalDevelopmentx3",
+			name: "Block of 3 Professional Development Sessions",
+			modal: "#classroom",
+			type: "packageAdd",
+			prices: {
+				"K8": [{
+					totalStudents: "under650",
+					price: 3000
+				}, {
+					totalStudents: "from650to1500",
+					price: 3000
+				}, {
+					totalStudents: "over1500",
+					price: 3000
+				}],
+				"HS": [{
+					totalStudents: "under650",
+					price: 3000
+				}, {
+					totalStudents: "from650to1500",
+					price: 3000
+				}, {
+					totalStudents: "over1500",
+					price: 3000
+				}]
+			}
+		}]
+	}
+};
+
+var state = {
+	schoolType: "HS",
+	totalStudents: "under650",
+	solutions: []
 }
 
 $(document).ready(function() {
@@ -322,7 +562,7 @@ $(document).ready(function() {
 		template: '#school-options-template',
 		data: function() {
 			return {
-				data: state.user
+				data: state
 			}
 		}
 	});
@@ -331,18 +571,18 @@ $(document).ready(function() {
 		template: '#packages-template',
 		data: function() {
 			return {
-				data: state.packages
+				data: product.packages
 			}
 		},
 		computed: {
 			filteredList: function() {
-				var schoolType = state.user.schoolType;
+				var schoolType = state.schoolType;
 				return this.data[schoolType].items.slice();
 			}
 		},
 		methods: {
 			priceForItem: function(prices) {
-				var totalStudents = state.user.totalStudents;
+				var totalStudents = state.totalStudents;
 				var price;
 				prices.forEach(function(pricePoint) {
 					if (pricePoint.totalStudents == totalStudents) {
@@ -350,6 +590,19 @@ $(document).ready(function() {
 					}
 				})
 				return price.formatMoney(0);
+			},
+			selectPackage: function(item) {
+				var solutions = [];
+				item.offerings.forEach(function(offering) {
+					if (Array.isArray(offering)) {
+						solutions.push(offering[0]);
+					} else {
+						solutions.push(offering);
+					}
+				});
+
+				state.solutions = solutions.slice();
+				console.log(state.solutions);
 			}
 		}
 	});
@@ -357,25 +610,32 @@ $(document).ready(function() {
 	var SolutionsList = Vue.extend({
 		template: '#solutions-template',
 		data: function() {
-			return {
-				data: {
-					offerings: state.offerings,
-					solutions: []
-				}
-			}
+			return state;
 		},
 		computed: {
 			filteredList: function() {
-				return this.data.offerings.filter(function(item) {
-					return item.type == "solution" && item.valid.indexOf(state.user.schoolType) > -1
+				return product.offerings.items.filter(function(item) {
+					return item.type == "solution" && item.valid.indexOf(state.schoolType) > -1
 				});
 			}
 		},
 		methods: {
-			//this is wrong
-			selectSolutions: function() {
-				state.user.solutions = this.data.solutions.slice()
-			}
+			checkStatus: function(item) {
+				return state.solutions.indexOf(item.id) > -1
+			},
+			priceForItem: function(item) {
+				var totalStudents = state.totalStudents;
+				var schoolType = state.schoolType;
+				var price;
+				if (item.prices.hasOwnProperty(schoolType)) {
+					item.prices[schoolType].forEach(function(pricePoint) {
+						if (pricePoint.totalStudents == totalStudents) {
+							price = pricePoint.price;
+						}
+					})
+				}
+				return price ? price.formatMoney(0) : "N/A";
+			},
 		}
 	});
 
@@ -383,13 +643,13 @@ $(document).ready(function() {
 		template: '#services-template',
 		data: function() {
 			return {
-				data: state.offerings
+				data: product.offerings.items
 			}
 		},
 		computed: {
 			filteredList: function() {
 				return this.data.filter(function(item) {
-					return item.type == "service" && item.valid.indexOf(state.user.schoolType) > -1
+					return item.type == "service" && item.valid.indexOf(state.schoolType) > -1
 				});
 			}
 		}
