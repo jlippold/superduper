@@ -36,13 +36,7 @@
         <p>The most popular packages at our best prices</p>
         <package-list></package-list>
 
-        <p>&nbsp;</p>
-        <h3>Solutions</h2>
         <solutions-list></solutions-list>
-
-        <p>&nbsp;</p>
-        <h3>Services</h3>
-        <services-list></services-list>
 
       </div>
       <div class="span4">
@@ -159,7 +153,6 @@
     <table class="table table-condensed client-table">
       <tr v-for="item in filteredList">
         <td>
-
             <label>
               <input type="radio" name="package"  
                 v-on:click="selectPackage(item)"
@@ -175,8 +168,24 @@
 
 <template id="solutions-template">
   <div>
+    <p>&nbsp;</p>
+    <h3>Solutions</h3>
     <table class="table table-condensed client-table">
-      <tr v-for="item in filteredList">
+      <tr v-for="item in getSolutions">
+        <td>
+            <label>
+              <input type="checkbox" v-bind:value="item.id" :checked="checkStatus(item)"> 
+              {{ item.name }}
+            </label>
+        </td>
+        <td>{{ priceForItem(item) }}</td>
+      </tr>
+    </table>
+
+    <p>&nbsp;</p>
+    <h3>Services</h3>
+    <table class="table table-condensed client-table">
+      <tr v-for="item in getServices">
         <td>
             <label>
               <input type="checkbox" v-bind:value="item.id" :checked="checkStatus(item)"> 
@@ -189,17 +198,6 @@
   </div>
 </template>
 
-<template id="services-template">
-  <div>
-    <table class="table table-condensed client-table">
-      <tr v-for="item in filteredList">
-        <td><input type="radio" /></td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.modal }}</td>
-      </tr>
-    </table>
-  </div>
-</template>
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>

@@ -613,9 +613,14 @@ $(document).ready(function() {
 			return state;
 		},
 		computed: {
-			filteredList: function() {
+			getSolutions: function() {
 				return product.offerings.items.filter(function(item) {
 					return item.type == "solution" && item.valid.indexOf(state.schoolType) > -1
+				});
+			},
+			getServices: function() {
+				return product.offerings.items.filter(function(item) {
+					return item.type == "service" && item.valid.indexOf(state.schoolType) > -1
 				});
 			}
 		},
@@ -639,27 +644,11 @@ $(document).ready(function() {
 		}
 	});
 
-	var ServicesList = Vue.extend({
-		template: '#services-template',
-		data: function() {
-			return {
-				data: product.offerings.items
-			}
-		},
-		computed: {
-			filteredList: function() {
-				return this.data.filter(function(item) {
-					return item.type == "service" && item.valid.indexOf(state.schoolType) > -1
-				});
-			}
-		}
-	});
 	vm = new Vue({
 		el: '#app',
 		components: {
 			'school-options': SchoolOptions,
 			'solutions-list': SolutionsList,
-			'services-list': ServicesList,
 			'package-list': PackageList
 		}
 	});
