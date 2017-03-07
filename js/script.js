@@ -73,22 +73,26 @@ $(document).ready(function() {
 						if (Array.isArray(offering)) { // OR 
 							offering.forEach(function(itemId, idx) {
 								var item = getProduct(itemId);
-								item.selected = (idx == 0);
-								item.disabled = false;
-								item.radio = true;
-								if (idx == 0) {
-									solutions.push(itemId);
+								if (item) {
+									item.selected = (idx == 0);
+									item.disabled = false;
+									item.radio = true;
+									if (idx == 0) {
+										solutions.push(itemId);
+									}
+									offerings.push(item);
 								}
-								offerings.push(item);
 							});
 						} else {
 							var itemId = offering;
 							var item = getProduct(itemId);
-							item.selected = true;
-							item.disabled = true;
-							item.radio = false;
-							solutions.push(itemId);
-							offerings.push(item);
+							if (item) {
+								item.selected = true;
+								item.disabled = true;
+								item.radio = false;
+								solutions.push(itemId);
+								offerings.push(item);
+							}
 						}
 					});
 
@@ -101,10 +105,9 @@ $(document).ready(function() {
 								item.selected = false;
 								item.radio = false;
 								item.disabled = false;
-							} else {
-								console.log(itemId);
+								offerings.push(item);
 							}
-							offerings.push(item);
+
 						}
 					});
 
