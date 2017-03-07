@@ -40,96 +40,9 @@
 
       </div>
       <div class="span4">
-        <h3>Cart</h3>
-        <div id="cart" style="clear: both">
-          <table class="table services table-condensed client-table">
-            <tr>
-              <td>Package:IO Classroom and Assessment, Insights or Talent</td>
-              <td>8,000</td>
-            </tr>
-            <tr>
-              <td>Solution: IO Classroom</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>Solution: IO Assessment</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>Solution: IO Insights</td>
-              <td>-</td>
-            </tr>
-            <tr>
-              <td>Solution: IO Talent</td>
-              <td>4,000</td>
-            </tr>
-            <tr>
-              <td>Service: Quality Review (QR) Prep</td>
-              <td>5,500</td>
-            </tr>
-          </table>
-
-          <p class="cartItem">Total Price:</p>
-          <p class="subTotal">$17,500.00</p>
-        </div>
+        <cart></cart>
         <p>&nbsp;</p>
-        <div>
-          <div>
-            <label>
-                DBN
-                <br />
-                <input type="text" value="" placeholder="e.g. 12X345">
-            </label>
-          </div>
-          <div>
-            <label>
-                School Name
-                <br />
-                 <input type="text" value="">
-            </label>
-          </div>
-          <div>
-            <label>
-                First Name
-                <br />
-                <input type="text" value="">
-            </label>
-          </div>
-          <div>
-            <label>
-                Last Name
-                <br />
-                <input type="text" value="">
-            </label>
-          </div>
-          <div>
-            <label>
-                Email
-                <br />
-                <input type="text" value="">
-            </label>
-          </div>
-          <div>
-            <label>
-                Telephone
-                <br />
-                <input type="text" value="">
-            </label>
-          </div>
-          <div>
-            <label>
-                Principal's Name
-                <br />
-                <input type="text" value="">
-            </label>
-          </div>
-
-          <div>
-            <input name="commit" value="Submit Order Now" class="form-button" type="submit">
-          </div>
-
-        </div>
-
+        <user-form></user-form>
       </div>
 
     </div>
@@ -187,6 +100,91 @@
       </tr>
     </table>
   </div>
+</template>
+
+<template id="user-form-template">
+  <div>
+    <div>
+      <label>
+        DBN
+        <br />  
+        <input type="text" value="" placeholder="e.g. 12X345"></label>
+    </div>
+    <div>
+      <label>
+        School Name
+        <br />  
+        <input type="text" value=""></label>
+    </div>
+    <div>
+      <label>
+        First Name
+        <br />  
+        <input type="text" value=""></label>
+    </div>
+    <div>
+      <label>
+        Last Name
+        <br />  
+        <input type="text" value=""></label>
+    </div>
+    <div>
+      <label>
+        Email
+        <br />  
+        <input type="text" value=""></label>
+    </div>
+    <div>
+      <label>
+        Telephone
+        <br />  
+        <input type="text" value=""></label>
+    </div>
+    <div>
+      <label>
+        Principal's Name
+        <br />  
+        <input type="text" value=""></label>
+    </div>
+
+    <div>
+      <input name="commit" value="Submit Order Now" class="form-button" type="submit"></div>
+  </div>
+</template>
+
+<template id="cart-template">
+    <div id="cart" style="clear: both">
+      <h3>Cart</h3>
+      <table class="table services table-condensed client-table">
+        <tr>
+          <td>Package:IO Classroom and Assessment, Insights or Talent</td>
+          <td>8,000</td>
+        </tr>
+        <tr>
+          <td>Solution: IO Classroom</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Solution: IO Assessment</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Solution: IO Insights</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>Solution: IO Talent</td>
+          <td>4,000</td>
+        </tr>
+        <tr>
+          <td>Service: Quality Review (QR) Prep</td>
+          <td>5,500</td>
+        </tr>
+      </table>
+
+      <p class="cartItem">Total Price:</p>
+      <p class="subTotal">$17,500.00</p>
+    </div>
 </template>
 
 <template id="solutions-template">

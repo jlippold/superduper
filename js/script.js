@@ -24,6 +24,24 @@ $(document).ready(function() {
 		}
 	});
 
+	var UserForm = Vue.extend({
+		template: '#user-form-template',
+		data: function() {
+			return {
+				data: state
+			}
+		}
+	});
+
+	var Cart = Vue.extend({
+		template: '#cart-template',
+		data: function() {
+			return {
+				data: state
+			}
+		}
+	});
+
 	var PackageList = Vue.extend({
 		template: '#packages-template',
 		data: function() {
@@ -199,7 +217,9 @@ $(document).ready(function() {
 		components: {
 			'school-options': SchoolOptions,
 			'solutions-list': SolutionsList,
-			'package-list': PackageList
+			'package-list': PackageList,
+			'user-form': UserForm,
+			'cart': Cart
 		}
 	});
 
