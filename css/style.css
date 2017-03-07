@@ -11,3 +11,12 @@ div.school-options > div {
 div.school-options input {
 	margin-top: -4px;
 }
+
+p.cartItem {
+	font-weight: bold;
+}
+
+p.subTotal {
+	font-weight: bold;
+	text-align: right
+}
