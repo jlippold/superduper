@@ -15,6 +15,7 @@ var getProduct = function(itemId) {
 	return foundItem;
 };
 
+
 //utility to decide if a solution is offered in a package
 var isInPackage = function(package, itemId) {
 	var itemIsInPackage = false;
@@ -30,6 +31,26 @@ var isInPackage = function(package, itemId) {
 		}
 	});
 	return itemIsInPackage;
+};
+
+var getPriceForSolution = function(solution) {
+	var solution;
+	solution.prices[state.schoolType].forEach(function(item) {
+		if (item.totalStudents == state.totalStudents) {
+			price = item.price
+		}
+	});
+	return price;
+};
+
+var getPriceForPackage = function(package) {
+	var price;
+	package.prices.forEach(function(item) {
+		if (item.totalStudents == state.totalStudents) {
+			price = item.price
+		}
+	});
+	return price;
 };
 
 Number.prototype.formatMoney = function(c, d, t) {

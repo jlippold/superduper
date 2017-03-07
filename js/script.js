@@ -8,9 +8,11 @@ var vm;
 var state = {
 	schoolType: "HS",
 	totalStudents: "under650",
+	userInfo: {},
 	solutions: [], //selected products
 	package: null, //selected package
-	offerings: [] //possible products for package
+	offerings: [], //possible products for package
+	cost: ""
 }
 
 $(document).ready(function() {
@@ -28,7 +30,7 @@ $(document).ready(function() {
 		template: '#user-form-template',
 		data: function() {
 			return {
-				data: state
+				data: state.userInfo
 			}
 		}
 	});
@@ -39,6 +41,46 @@ $(document).ready(function() {
 			return {
 				data: state
 			}
+		},
+		computed: {
+			listCart: function() {
+				var items = [];
+				var totalCost = 0;
+				var itemPrice;
+				if (state.package) {
+					itemPrice = getPriceForPackage(state.package);
+					items.push({
+						name: state.package.name,
+						price: itemPrice.formatMoney(0)
+					})
+					totalCost += itemPrice;
+				}
+
+				state.solutions.forEach(function(itemId) {
+					var item = getProduct(itemId);
+					if (item) {
+						itemPrice = getPriceForSolution(item);
+
+						// void price if solution is from a package
+						if (state.package && isInPackage(state.package, itemId)) {
+							items.push({
+								name: "&nbsp;&bullet;&nbsp;" + item.name,
+								price: "-"
+							})
+						} else {
+							items.push({
+								name: item.name,
+								price: itemPrice.formatMoney(0)
+							});
+							totalCost += itemPrice;
+						}
+					}
+				});
+				
+				state.cost = totalCost.formatMoney(0);
+				return items;
+			},
+
 		}
 	});
 
@@ -57,7 +99,7 @@ $(document).ready(function() {
 				var schoolType = state.schoolType;
 				var list = this.data[schoolType].items.slice();
 				list.unshift({
-					name: "Build Your own package",
+					name: "Build Your Own Package",
 					prices: "-"
 				});
 				return list;

@@ -155,35 +155,20 @@
 <template id="cart-template">
     <div id="cart" style="clear: both">
       <h3>Cart</h3>
-      <table class="table services table-condensed client-table">
-        <tr>
-          <td>Package:IO Classroom and Assessment, Insights or Talent</td>
-          <td>8,000</td>
-        </tr>
-        <tr>
-          <td>Solution: IO Classroom</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Solution: IO Assessment</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Solution: IO Insights</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>Solution: IO Talent</td>
-          <td>4,000</td>
-        </tr>
-        <tr>
-          <td>Service: Quality Review (QR) Prep</td>
-          <td>5,500</td>
+      <p>
+        School Type: {{data.schoolType}} 
+        <br />
+        Students: {{data.totalStudents}}
+      </p>
+      <table class="table cart table-condensed client-table">
+        <tr v-for="item in listCart">
+          <td v-html="item.name"></td>
+          <td>{{ item.price }}</td>
         </tr>
       </table>
 
-      <p class="cartItem">Total Price:</p>
-      <p class="subTotal">$17,500.00</p>
+      <p class="subTotal">Total Price: {{ data.cost }}</p>
+      
     </div>
 </template>
 
