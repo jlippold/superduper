@@ -150,7 +150,7 @@
 
 <template id="packages-template">
   <div>
-    <table class="table table-condensed client-table">
+    <table class="table packages table-condensed client-table">
       <tr v-for="item in filteredList">
         <td>
             <label>
@@ -170,13 +170,29 @@
   <div>
     <p>&nbsp;</p>
     <h3>Solutions</h3>
-    <table class="table table-condensed client-table">
+    <table class="table solutions table-condensed client-table">
       <tr v-for="item in getSolutions">
         <td>
             <label>
-              <input type="checkbox" v-model="solutions" v-bind:value="item.id" :checked="checkStatus(item)"> 
+              <input  type="checkbox" 
+                      v-if="!item.radio"
+                      :disabled="item.disabled"
+                      v-model="solutions" 
+                      v-bind:value="item.id" 
+                      :checked="item.selected" 
+                      v-on:click="showState(item)"
+              /> 
+
+              <input  type="radio" 
+                      name="option" 
+                      v-if="item.radio"
+                      v-bind:value="item.id" 
+                      v-on:click="selectOption(item)"
+              /> 
+
               {{ item.name }}
             </label>
+
         </td>
         <td>{{ priceForItem(item) }}</td>
       </tr>
@@ -184,7 +200,7 @@
 
     <p>&nbsp;</p>
     <h3>Services</h3>
-    <table class="table table-condensed client-table">
+    <table class="table services table-condensed client-table">
       <tr v-for="item in getServices">
         <td>
             <label>
@@ -202,9 +218,10 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script type="text/javascript" src="js/async.min.2.1.4.js"></script>
-  <script type="text/javascript" src="js/moment.js"></script>
-  <script type="text/javascript" src="js/script.js?r=0.4"></script>
+
+  <script type="text/javascript" src="js/products.js"></script>
+  <script type="text/javascript" src="js/util.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>
