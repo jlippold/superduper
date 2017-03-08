@@ -34,17 +34,19 @@ var isInPackage = function(package, itemId) {
 };
 
 var getPriceForSolution = function(solution) {
-	var solution;
-	solution.prices[state.schoolType].forEach(function(item) {
-		if (item.totalStudents == state.totalStudents) {
-			price = item.price
-		}
-	});
+	var price = 0;
+	if (solution.prices && solution.prices.hasOwnProperty(state.schoolType)) {
+		solution.prices[state.schoolType].forEach(function(item) {
+			if (item.totalStudents == state.totalStudents) {
+				price = item.price
+			}
+		});
+	}
 	return price;
 };
 
 var getPriceForPackage = function(package) {
-	var price;
+	var price = 0;
 	package.prices.forEach(function(item) {
 		if (item.totalStudents == state.totalStudents) {
 			price = item.price

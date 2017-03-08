@@ -1,3 +1,14 @@
+div.user-form {
+    margin: 0px 20px 60px 30px;
+}
+
+div.cart {
+	padding: 20px;
+}
+
+div.school-options {
+	margin: 60px 0;
+}
 
 div.school-options label {
 	margin-left: 30px;

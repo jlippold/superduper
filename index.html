@@ -13,43 +13,51 @@
 
 <div class="container" id="app">
 
-  <div id="messages"></div>
-
   <div class="main">
     <div class="row-fluid">
       <div class="span4 offset4">
-        <img src="https://auth.ioeducation.com/assets/logo_white-4cb67d9766aabe97d3cf0252add9e18e.png" alt="Logo white" />
-        <br/>
+        <img src="https://auth.ioeducation.com/assets/logo_white-4cb67d9766aabe97d3cf0252add9e18e.png" alt="Logo white" />  
+        <br/>  
+      </div>
+
+      <div class="span4 pull-right">
+        <cart-button></cart-button>
       </div>
     </div>
-    <p>&nbsp;</p>
-
-
-    <school-options></school-options>
-
-    <p>&nbsp;</p>
-
-    <div class="row-fluid client-table-container">
-      <div class="span8" style="padding: 20px">
-
-        <h3>Packages</h3>
-        <p>The most popular packages at our best prices</p>
-        <package-list></package-list>
-
-        <solutions-list></solutions-list>
-
-      </div>
-      <div class="span4">
-        <cart></cart>
-        <p>&nbsp;</p>
-        <user-form></user-form>
-      </div>
-
-    </div>
-
-
   </div>
 
+  <div class="client-table-container" style="padding: 0">
+    <cart></cart>
+    <user-form></user-form> 
+  </div>
+
+  <school-options></school-options>
+
+  <div class="row-fluid client-table-container">
+    <div class="span6">
+      <solutions-list></solutions-list>
+    </div>
+    <div class="span6 client-table-container" style="padding: 20px">
+      <h3>Packages</h3>
+      <p>The most popular packages at our best prices</p>
+      <package-list></package-list>
+    </div>
+  </div>
+
+  <div class="modals">
+    <div id="classroom" class="modal hide fade" role="dialog" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Some product name</h3>
+      </div>
+      <div class="modal-body">
+        <p>Wow, such a great product here! Must buy</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <template id="school-options-template">
@@ -102,76 +110,86 @@
   </div>
 </template>
 
-<template id="user-form-template">
-  <div>
-    <div>
-      <label>
-        DBN
-        <br />  
-        <input type="text" value="" placeholder="e.g. 12X345"></label>
-    </div>
-    <div>
-      <label>
-        School Name
-        <br />  
-        <input type="text" value=""></label>
-    </div>
-    <div>
-      <label>
-        First Name
-        <br />  
-        <input type="text" value=""></label>
-    </div>
-    <div>
-      <label>
-        Last Name
-        <br />  
-        <input type="text" value=""></label>
-    </div>
-    <div>
-      <label>
-        Email
-        <br />  
-        <input type="text" value=""></label>
-    </div>
-    <div>
-      <label>
-        Telephone
-        <br />  
-        <input type="text" value=""></label>
-    </div>
-    <div>
-      <label>
-        Principal's Name
-        <br />  
-        <input type="text" value=""></label>
-    </div>
+<template id="cart-template">
+  <div class="cart"  v-if="data.checkout">
 
-    <div>
-      <input name="commit" value="Submit Order Now" class="form-button" type="submit"></div>
+    <h3>Cart</h3>
+    <p>
+      {{data.schoolType}} {{data.totalStudents}}
+    </p>
+    <table class="table cart table-condensed client-table">
+      <tr v-for="item in listCart">
+        <td v-html="item.name"></td>
+        <td>{{ item.price }}</td>
+      </tr>
+    </table>
+
+    <p class="subTotal">Total Price: {{ data.cost }}</p>
+
   </div>
 </template>
 
-<template id="cart-template">
-    <div id="cart" style="clear: both">
-      <h3>Cart</h3>
-      <p>
-        {{data.schoolType}} {{data.totalStudents}}
-      </p>
-      <table class="table cart table-condensed client-table">
-        <tr v-for="item in listCart">
-          <td v-html="item.name"></td>
-          <td>{{ item.price }}</td>
-        </tr>
-      </table>
+<template id="user-form-template">
+  <div v-if="data.checkout" class="user-form">
+    <h3>Order Details</h3>
+    <div class="row-fluid">
+      <div class="span6">
+        <div>
+            DBN<br />
+            <input type="text" value="" placeholder="e.g. 12X345">
+        </div>
+        <div>
+          School Name<br />
+          <input type="text" value="">
+        </div>
+        <div>
+            First Name<br />
+            <input type="text" value="">
+        </div>
+        <div>
+            Last Name<br />
+            <input type="text" value="">
+        </div>
+      </div>
+      <div class="span6">
+        <div>
+            Email<br />
+            <input type="text" value="">
+        </div>
+        <div>
+            Telephone<br />
+            <input type="text" value="">
+        </div>
+        <div>
+            Principal's Name<br />
+            <input type="text" value="">
+        </div>
+      </div>
+    </div>  
+    <button class="form-button" style="padding-top: 20px">
+      Submit Order
+    </button>
+  </div>
+</template>
 
-      <p class="subTotal">Total Price: {{ data.cost }}</p>
-      
+<template id="cart-button-template">
+  <div v-if="listCart.length > 0 && data.checkout==false">
+    <div>
+      <button class="form-button pull-right" v-on:click="checkout()">
+         Check Out
+         <span class="badge badge-important" style="margin-left: 3px">
+            {{data.solutions.length}}
+          </span> 
+      </button>
     </div>
+    <div class="pull-right" style="clear: both; padding-top: 10px">
+       {{ data.cost }} total
+    </div>
+  </div>
 </template>
 
 <template id="solutions-template">
-  <div>
+  <div style="padding: 20px">
     <p>&nbsp;</p>
     <h3>Solutions</h3>
     <table class="table solutions table-condensed client-table">
@@ -194,7 +212,9 @@
                       v-on:click="selectOption(item)"
               /> 
 
-              {{ item.name }}
+              <a v-bind:href="item.modal" class="modalTrigger">
+                {{ item.name }}
+              </a>
             </label>
 
         </td>
@@ -217,6 +237,7 @@
     </table>
   </div>
 </template>
+
 
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

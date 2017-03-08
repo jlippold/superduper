@@ -8,11 +8,14 @@ var vm;
 var state = {
 	schoolType: "High School",
 	totalStudents: "Under 650 Students",
-	userInfo: {},
+	userInfo: {
+
+	},
 	solutions: [], //selected products
 	package: null, //selected package
 	offerings: [], //possible products for package
-	cost: ""
+	cost: "",
+	checkout: false
 }
 
 $(document).ready(function() {
@@ -30,7 +33,7 @@ $(document).ready(function() {
 		template: '#user-form-template',
 		data: function() {
 			return {
-				data: state.userInfo
+				data: state
 			}
 		}
 	});
@@ -79,8 +82,21 @@ $(document).ready(function() {
 
 				state.cost = totalCost.formatMoney(0);
 				return items;
-			},
+			}
+		}
+	});
 
+	var CartButton = Cart.extend({
+		template: '#cart-button-template',
+		data: function() {
+			return {
+				data: state
+			}
+		},
+		methods: {
+			checkout: function() {
+				state.checkout = true
+			}
 		}
 	});
 
@@ -213,6 +229,14 @@ $(document).ready(function() {
 				});
 			}
 		},
+		updated: function() {
+			$("a.modalTrigger").bind("click", function() {
+				var target = $(this).attr("href");
+				console.log(target);
+				$(target).modal('show');
+				return false;
+			});
+		},
 		methods: {
 			checkStatus: function(item) {
 				return state.solutions.indexOf(item.id) > -1
@@ -261,7 +285,8 @@ $(document).ready(function() {
 			'solutions-list': SolutionsList,
 			'package-list': PackageList,
 			'user-form': UserForm,
-			'cart': Cart
+			'cart': Cart,
+			'cart-button': CartButton
 		}
 	});
 
