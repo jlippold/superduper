@@ -62,7 +62,7 @@
 
 <template id="school-options-template">
   <div class="row-fluid school-options client-table-container">
-    <div class="span8">
+    <div class="span8" style="padding-left: 40px;">
       <h4>School Type</h4>
       <label>
         <input type="radio" name="schoolType" value="High School" v-model="data.schoolType">
@@ -111,7 +111,7 @@
 </template>
 
 <template id="cart-template">
-  <div class="cart"  v-if="data.checkout">
+  <div class="cart" v-if="data.checkout && data.solutions.length > 0">
 
     <h3>Cart</h3>
     <p>
@@ -130,43 +130,43 @@
 </template>
 
 <template id="user-form-template">
-  <div v-if="data.checkout" class="user-form">
+  <div v-if="data.checkout && data.solutions.length > 0" class="user-form">
     <h3>Order Details</h3>
     <div class="row-fluid">
       <div class="span6">
         <div>
             DBN<br />
-            <input type="text" value="" placeholder="e.g. 12X345">
+            <input type="text" v-model="data.userInfo.DBN" placeholder="e.g. 12X345">
         </div>
         <div>
           School Name<br />
-          <input type="text" value="">
+          <input type="text" v-model="data.userInfo.school">
         </div>
         <div>
             First Name<br />
-            <input type="text" value="">
+            <input type="text" v-model="data.userInfo.firstName">
         </div>
         <div>
             Last Name<br />
-            <input type="text" value="">
+            <input type="text" v-model="data.userInfo.lastName">
         </div>
       </div>
       <div class="span6">
         <div>
             Email<br />
-            <input type="text" value="">
+            <input type="text" v-model="data.userInfo.email">
         </div>
         <div>
             Telephone<br />
-            <input type="text" value="">
+            <input type="text" v-model="data.userInfo.telephone">
         </div>
         <div>
             Principal's Name<br />
-            <input type="text" value="">
+            <input type="text" v-model="data.userInfo.prinicpal">
         </div>
       </div>
     </div>  
-    <button class="form-button" style="padding-top: 20px">
+    <button class="form-button" style="margin-top: 20px" v-on:click="submitOrder()">
       Submit Order
     </button>
   </div>

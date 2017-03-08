@@ -9,7 +9,12 @@ var state = {
 	schoolType: "High School",
 	totalStudents: "Under 650 Students",
 	userInfo: {
-
+		DBN: "",
+		firstName: "",
+		lastName: "",
+		email: "",
+		telephone: "",
+		principal: "",
 	},
 	solutions: [], //selected products
 	package: null, //selected package
@@ -34,6 +39,20 @@ $(document).ready(function() {
 		data: function() {
 			return {
 				data: state
+			}
+		},
+		methods: {
+			submitOrder: function() {
+				var submission = {
+					userInfo: state.userInfo,
+					schoolType: state.schoolType,
+					totalStudents: state.totalStudents,
+					package: state.package,
+					cost: state.cost,
+					solutions: state.solutions.slice()
+				};
+
+				alert("Send server form email: \n\n" + JSON.stringify(submission, null, 4));
 			}
 		}
 	});
@@ -203,6 +222,9 @@ $(document).ready(function() {
 						item.selected = false;
 					});
 					state.offerings = offerings.slice();
+					if (state.checkout) {
+						state.checkout = (state.solutions.length > 0);
+					}
 				}
 				//select the first option avaliable
 				setTimeout(function() {
@@ -260,7 +282,9 @@ $(document).ready(function() {
 					}
 				});
 				state.solutions = solutions.slice();
-				console.log(state.solutions);
+				if (state.checkout) {
+					state.checkout = (state.solutions.length > 0);
+				}
 			},
 			priceForItem: function(item) {
 				var totalStudents = state.totalStudents;
