@@ -6,8 +6,8 @@ var vm;
 */
 
 var state = {
-	schoolType: "HS",
-	totalStudents: "under650",
+	schoolType: "High School",
+	totalStudents: "Under 650 Students",
 	userInfo: {},
 	solutions: [], //selected products
 	package: null, //selected package
@@ -50,7 +50,7 @@ $(document).ready(function() {
 				if (state.package) {
 					itemPrice = getPriceForPackage(state.package);
 					items.push({
-						name: state.package.name,
+						name: "Package " + state.package.name,
 						price: itemPrice.formatMoney(0)
 					})
 					totalCost += itemPrice;
@@ -76,7 +76,7 @@ $(document).ready(function() {
 						}
 					}
 				});
-				
+
 				state.cost = totalCost.formatMoney(0);
 				return items;
 			},

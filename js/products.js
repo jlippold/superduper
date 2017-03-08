@@ -1,215 +1,215 @@
 var product = {
 	packages: {
-		"HS": {
+		"High School": {
 			items: [{
 				name: "A: IO Classroom and Compass",
 				offerings: ["classroom", "compass"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 7500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 8000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 8500
 				}]
 			}, {
 				name: "B1: IO Classroom and Assessment",
 				offerings: ["classroom", "assessment"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 9000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 10000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 11000
 				}]
 			}, {
 				name: "B2: IO Classroom, Insights or Talent",
 				offerings: ["classroom", ["insights", "talent"]],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 12500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 13500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 14500
 				}]
 			}, {
 				name: "C1: IO Classroom, Compass and Assessment",
 				offerings: ["classroom", "compass", "assessment"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 10000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 10500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 11000
 				}]
 			}, {
 				name: "C2: IO Classroom, Compass, Insights or Talent",
 				offerings: ["classroom", "compass", ["insights", "talent"]],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 15000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 16500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 18000
 				}]
 			}, {
 				name: "D1: IO Classroom, Compass, Assessment, Insights or Talent",
 				offerings: ["classroom", "compass", "assessment", ["insights", "talent"]],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 12500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 13500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 14500
 				}]
 			}, {
 				name: "D2: IO Classroom, Compass, Insights and Talent",
 				offerings: ["classroom", "compass", "insights", "talent"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 17500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 19500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 21500
 				}]
 			}, {
 				name: "E: IO Classroom, Compass, Assessment, Insights, and Talent",
 				offerings: ["classroom", "compass", "assessment", "insights", "talent"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 21500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 24500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 27500
 				}]
 			}, {
 				name: "F: IO Classroom, Compass, Assessment, Insights, Talent and Quality Review",
 				offerings: ["classroom", "compass", "assessment", "insights", "talent", "qualityReview"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 21500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 24500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 27500
 				}]
 			}]
 		},
-		"K8": {
+		"Elementary or Junior High School": {
 			items: [{
 				name: "A: IO Classroom and Insights",
 				offerings: ["classroom", "insights"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 7500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 8000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 8500
 				}]
 			}, {
 				name: "B1: IO Classroom and Talent",
 				offerings: ["classroom", "talent"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 6500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 7000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 7500
 				}]
 			}, {
 				name: "B2: IO Classroom and Assessment",
 				offerings: ["classroom", "assessment"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 10000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 11000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 12500
 				}]
 			}, {
 				name: "C1: IO Classroom, Insights and Talent",
 				offerings: ["classroom", "insights", "talent"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 10000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 10500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 11000
 				}]
 			}, {
 				name: "C2: IO Classroom, Insights and Assessment",
 				offerings: ["classroom", "insights", "assessment"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 12500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 13500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 14500
 				}]
 			}, {
 				name: "D1: IO Classroom, Insights, Assessment and Talent",
 				offerings: ["classroom", "insights", "assessment", "talent"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 15000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 16500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 18000
 				}]
 			}, {
 				name: "E: IO Classroom, Insights, Assessment, Talent and QR Prep",
 				offerings: ["classroom", "insights", "assessment", "talent", "qualityReview"],
 				prices: [{
-					totalStudents: "under650",
+					totalStudents: "Under 650 Students",
 					price: 19000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 21500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 24000
 				}]
 			}]
@@ -220,27 +220,27 @@ var product = {
 			id: "classroom",
 			name: "IO Classroom",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4250
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 5000
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4250
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 5000
 				}]
 			}
@@ -248,17 +248,17 @@ var product = {
 			id: "compass",
 			name: "Compass",
 			modal: "#classroom",
-			valid: ["HS"],
+			valid: ["High School"],
 			type: "solution",
 			prices: {
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4250
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 5000
 				}]
 			}
@@ -266,27 +266,27 @@ var product = {
 			id: "insights",
 			name: "IO Insights",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4250
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 5000
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 3000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 3500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 4000
 				}]
 			}
@@ -294,27 +294,27 @@ var product = {
 			id: "assessment",
 			name: "IO Assessment",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 5500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 6500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 7500
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 5500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 6500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 7500
 				}]
 			}
@@ -322,27 +322,27 @@ var product = {
 			id: "talent",
 			name: "IO Talent",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 3000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 3500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 4000
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 3000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 3500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 4000
 				}]
 			}
@@ -350,7 +350,7 @@ var product = {
 			id: "gradeCam",
 			name: "GradeCam",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
 			prices: {}
@@ -358,7 +358,7 @@ var product = {
 			id: "k1",
 			name: "K-1",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
 			prices: {}
@@ -366,7 +366,7 @@ var product = {
 			id: "itemBank",
 			name: "Item Bank",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
 			prices: {}
@@ -374,7 +374,7 @@ var product = {
 			id: "quickChecks",
 			name: "Quick Checks",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
 			prices: {}
@@ -382,7 +382,7 @@ var product = {
 			id: "ngss",
 			name: "NGSS",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
 			prices: {}
@@ -390,27 +390,27 @@ var product = {
 			id: "qualityReview",
 			name: "Quality Review (QR) Prep",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 5500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 6500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 7500
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 5500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 6500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 7500
 				}]
 			}
@@ -418,27 +418,27 @@ var product = {
 			id: "stars",
 			name: "STARS Program",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 5000
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 5000
 				}]
 			}
@@ -446,27 +446,27 @@ var product = {
 			id: "professionalDevelopmentx1",
 			name: "Professional Development Session",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 2000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 2000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 2000
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 2000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 2000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 2000
 				}]
 			}
@@ -474,27 +474,27 @@ var product = {
 			id: "professionalDevelopmentx3",
 			name: "Block of 3 Professional Development",
 			modal: "#classroom",
-			valid: ["HS", "K8"],
+			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 4500
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 4500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 4500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 4500
 				}]
 			}
@@ -504,24 +504,24 @@ var product = {
 			modal: "#classroom",
 			type: "packageAdd",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 1500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 1500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 1500
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 1500
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 1500
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 1500
 				}]
 			}
@@ -531,24 +531,24 @@ var product = {
 			modal: "#classroom",
 			type: "packageAdd",
 			prices: {
-				"K8": [{
-					totalStudents: "under650",
+				"Elementary or Junior High School": [{
+					totalStudents: "Under 650 Students",
 					price: 3000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 3000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 3000
 				}],
-				"HS": [{
-					totalStudents: "under650",
+				"High School": [{
+					totalStudents: "Under 650 Students",
 					price: 3000
 				}, {
-					totalStudents: "from650to1500",
+					totalStudents: "650 - 1500 Students",
 					price: 3000
 				}, {
-					totalStudents: "over1500",
+					totalStudents: "Over 1500 Students",
 					price: 3000
 				}]
 			}

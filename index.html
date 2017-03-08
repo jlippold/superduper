@@ -57,11 +57,11 @@
     <div class="span8">
       <h4>School Type</h4>
       <label>
-        <input type="radio" name="schoolType" value="HS" v-model="data.schoolType">&nbsp;&nbsp;
+        <input type="radio" name="schoolType" value="High School" v-model="data.schoolType">
         High School
       </label>
       <label>
-        <input type="radio" name="schoolType" value="K8" v-model="data.schoolType">&nbsp;&nbsp;
+        <input type="radio" name="schoolType" value="Elementary or Junior High School" v-model="data.schoolType">
         Elementary or Junior High School (K-8)
       </label>
     </div>
@@ -69,15 +69,15 @@
     <div class="span4">
       <h4>Amount of Students</h4>
       <label>
-        <input type="radio" name="students" v-model="data.totalStudents" value="under650">&nbsp;&nbsp;
+        <input type="radio" name="students" v-model="data.totalStudents" value="Under 650 Students">
         Under 650 Students
       </label>
       <label>
-        <input type="radio" name="students" v-model="data.totalStudents" value="from650to1500">&nbsp;&nbsp;
+        <input type="radio" name="students" v-model="data.totalStudents" value="650 - 1500 Students">
         650 - 1500 Students
       </label>
       <label>
-        <input type="radio" name="students" v-model="data.totalStudents" value="over1500">&nbsp;&nbsp;
+        <input type="radio" name="students" v-model="data.totalStudents" value="Over 1500 Students">
         Over 1500 Students
       </label>
     </div>
@@ -156,9 +156,7 @@
     <div id="cart" style="clear: both">
       <h3>Cart</h3>
       <p>
-        School Type: {{data.schoolType}} 
-        <br />
-        Students: {{data.totalStudents}}
+        {{data.schoolType}} {{data.totalStudents}}
       </p>
       <table class="table cart table-condensed client-table">
         <tr v-for="item in listCart">
