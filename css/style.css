@@ -31,3 +31,11 @@ p.subTotal {
 	font-weight: bold;
 	text-align: right
 }
+
+label span {
+	margin-left: 5px;
+}
+
+label > input[type="radio"], label > input[type="checkbox"] {
+	margin-top: -4px;
+}

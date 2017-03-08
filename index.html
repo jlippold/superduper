@@ -66,11 +66,11 @@
       <h4>School Type</h4>
       <label>
         <input type="radio" name="schoolType" value="High School" v-model="data.schoolType">
-        High School
+        <span>High School</span>
       </label>
       <label>
         <input type="radio" name="schoolType" value="Elementary or Junior High School" v-model="data.schoolType">
-        Elementary or Junior High School (K-8)
+        <span>Elementary or Junior High School (K-8)</span> 
       </label>
     </div>
 
@@ -78,15 +78,15 @@
       <h4>Amount of Students</h4>
       <label>
         <input type="radio" name="students" v-model="data.totalStudents" value="Under 650 Students">
-        Under 650 Students
+        <span>Under 650 Students</span>
       </label>
       <label>
         <input type="radio" name="students" v-model="data.totalStudents" value="650 - 1500 Students">
-        650 - 1500 Students
+        <span>650 - 1500 Students</span>
       </label>
       <label>
         <input type="radio" name="students" v-model="data.totalStudents" value="Over 1500 Students">
-        Over 1500 Students
+        <span>Over 1500 Students</span>
       </label>
     </div>
   </div>
@@ -101,7 +101,7 @@
               <input type="radio" name="package"  
                 v-on:click="selectPackage(item)"
                  /> 
-              {{ item.name }}
+              <span>{{ item.name }}</span>
             </label>
         </td>
         <td>{{ priceForItem(item.prices) }}</td>
@@ -211,10 +211,11 @@
                       v-bind:value="item.id" 
                       v-on:click="selectOption(item)"
               /> 
-
-              <a v-bind:href="item.modal" class="modalTrigger">
-                {{ item.name }}
-              </a>
+              <span>
+                <a v-bind:href="item.modal" class="modalTrigger">
+                  {{ item.name }}
+                </a>
+              </span>
             </label>
 
         </td>
@@ -229,7 +230,9 @@
         <td>
             <label>
               <input type="checkbox" v-model="solutions" v-bind:value="item.id" :checked="checkStatus(item)"> 
+              <span>
               {{ item.name }}
+              </span>
             </label>
         </td>
         <td>{{ priceForItem(item) }}</td>
