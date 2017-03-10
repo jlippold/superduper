@@ -91,6 +91,15 @@ $(document).ready(function() {
 					totalCost += itemPrice;
 				}
 
+				if (state.subPackage) {
+					itemPrice = getPriceForPackage(state.subPackage);
+					items.push({
+						name: "Addon Bundle " + state.subPackage.name,
+						price: itemPrice.formatMoney(0)
+					})
+					totalCost += itemPrice;
+				}
+
 				state.solutions.forEach(function(itemId) {
 					var item = getProduct(itemId);
 					if (item) {
@@ -102,7 +111,12 @@ $(document).ready(function() {
 								name: "&nbsp;&bullet;&nbsp;" + item.name,
 								price: "-"
 							})
-						} else {
+						} else if (state.subPackage && isInPackage(state.subPackage, itemId)) {
+							items.push({
+								name: "&nbsp;&bullet;&nbsp;" + item.name,
+								price: "-"
+							})
+						} else{
 							items.push({
 								name: item.name,
 								price: itemPrice.formatMoney(0)

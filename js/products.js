@@ -710,7 +710,7 @@ var product = {
 	subPackage: {
 		depends: "assessment",
 		items: [{
-			name: "Assessments A: Item Bank and Quick Check bundle",
+			name: "Assessments A: Item Bank and Quick Check",
 			offerings: ["itemBank", "quickChecks"],
 			depends: "assessment",
 			prices: [{

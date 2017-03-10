@@ -57,13 +57,23 @@ var getPriceForSolution = function(solution) {
 
 var getPriceForPackage = function(package) {
 	var price = 0;
-	package.prices.forEach(function(item) {
-		if (item.studentPriceGroup == state.studentPriceGroup) {
-			price = item.price
+	package.prices.forEach(function(pricePoint) {
+		if (pricePoint.studentPriceGroup == state.studentPriceGroup) {
+			price = pricePoint.price;
+			if (pricePoint.hasOwnProperty("perStudentPrice")) {
+				if (state.studentCount) {
+					price = pricePoint.perStudentPrice * state.studentCount;
+				} else {
+					price = 0
+				}
+			} else {
+				price = pricePoint.price;
+			}
 		}
 	});
 	return price;
 };
+
 
 Number.prototype.formatMoney = function(c, d, t) {
 	// http://stackoverflow.com/a/149099
