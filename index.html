@@ -19,10 +19,6 @@
         <img src="https://auth.ioeducation.com/assets/logo_white-4cb67d9766aabe97d3cf0252add9e18e.png" alt="Logo white" />  
         <br/>  
       </div>
-
-      <div class="span4 pull-right">
-        <cart-button></cart-button>
-      </div>
     </div>
   </div>
 
@@ -31,15 +27,16 @@
     <user-form></user-form> 
   </div>
 
-  <school-options></school-options>
+  
 
   <div class="row-fluid client-table-container">
     <div class="span6">
+      <school-options></school-options>
       <solutions-list></solutions-list>
     </div>
-    <div class="span6 client-table-container" style="padding: 20px">
-      <h3>Packages</h3>
-      <p>The most popular packages at our best prices</p>
+
+    <div class="span6" style="padding: 20px">
+      <cart-button></cart-button>
       <package-list></package-list>
     </div>
   </div>
@@ -64,9 +61,8 @@
 </div>
 
 <template id="school-options-template">
-  <div class="row-fluid school-options client-table-container">
-    <div class="span12" style="padding-left: 40px;">
-      <h4>School Type</h4>
+  <div class="school-options" style="padding: 20px;">
+      <h3>Pricing Model</h3>
       <label>
         <input type="radio" name="schoolType" value="High School" v-model="data.schoolType">
         <span>High School</span>
@@ -75,28 +71,37 @@
         <input type="radio" name="schoolType" value="Elementary or Junior High School" v-model="data.schoolType">
         <span>Elementary or Junior High School (K-8)</span> 
       </label>
-      <h4>Number of Students</h4>
-      <label>
-          <input 
-            type="number" 
-            min="10" 
-            max="15000"
-            v-model.number="data.studentCount"
-            v-on:change="setStudentPriceGroup()"
-            title="Please enter the total number of students in your school" />
-      </label>
-      <label>
-          School Pricing model:
-            {{ data.studentPriceGroup }}
+
+      <label >
+          <div style="padding-bottom: 10px;">
+            <span style="line-height: 37px">
+              Number of Students
+            </span>
+            <span>
+              <input 
+                type="number" 
+                min="10" 
+                max="15000"
+                style="width: 30%; min-width: 100px;"
+                v-model.number="data.studentCount"
+                v-on:keyup="setStudentPriceGroup()"
+                title="Please enter the total number of students in your school" 
+              />
+            </span>
+          </div> 
+          
       </label>
 
-    </div>
-
+      <p style="margin-left: 30px">
+        {{ data.schoolType }} / {{ data.studentPriceGroup }}
+      </p>
   </div>
 </template>
 
 <template id="packages-template">
-  <div>
+  <div class="client-table-container">
+    <h3>Packages</h3>
+    <p>The most popular packages at our best prices</p>
     <table class="table packages table-condensed client-table">
       <tr v-for="item in filteredList">
         <td>
@@ -176,24 +181,24 @@
 </template>
 
 <template id="cart-button-template">
-  <div v-if="listCart.length > 0 && data.checkout==false">
-    <div>
-      <button class="form-button pull-right" v-on:click="checkout()">
+  <div style="text-align: right;">
+    <div v-if="listCart.length > 0">
+      <button class="form-button" v-on:click="checkout()">
          Check Out
          <span class="badge badge-important" style="margin-left: 3px">
             {{data.solutions.length}}
           </span> 
       </button>
     </div>
-    <div class="pull-right" style="clear: both; padding-top: 10px">
+    <div v-if="listCart.length > 0" style="clear: both; padding-top: 10px">
        {{ data.cost }} total
     </div>
+    
   </div>
 </template>
 
 <template id="solutions-template">
   <div style="padding: 20px">
-    <p>&nbsp;</p>
     <h3>Solutions</h3>
     <table class="table solutions table-condensed client-table">
       <tr v-for="item in getSolutions">

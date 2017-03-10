@@ -6,10 +6,6 @@ div.cart {
 	padding: 40px;
 }
 
-div.school-options {
-	margin: 60px 0;
-}
-
 div.school-options label {
 	margin-left: 30px;
 	padding-top: 7px;
@@ -38,4 +34,34 @@ label span {
 
 label > input[type="radio"], label > input[type="checkbox"] {
 	margin-top: -4px;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* from auth.css line 8288 */
+/* line 1, /srv/www/authserver/releases/20170218124952/app/assets/stylesheets/_forms.scss */
+input[type=number] {
+  font-family: "museo-sans", "Museo Sans", "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 300;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  width: 75%;
+  border: none;
+  margin: 5px 0;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 4px;
+  cursor: inherit;
+  z-index: 5;
+  outline-color: transparent;
+  outline: none;
 }

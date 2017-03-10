@@ -126,7 +126,10 @@ $(document).ready(function() {
 		},
 		methods: {
 			checkout: function() {
-				state.checkout = true
+				state.checkout = true;
+				setTimeout(function() {
+					window.scrollTo(0, 0)
+				}, 1);
 			}
 		}
 	});
