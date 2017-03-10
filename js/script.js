@@ -327,15 +327,27 @@ $(document).ready(function() {
 			priceForItem: function(item) {
 				var studentPriceGroup = state.studentPriceGroup;
 				var schoolType = state.schoolType;
-				var price;
+				var price, label;
 				if (item.prices.hasOwnProperty(schoolType)) {
 					item.prices[schoolType].forEach(function(pricePoint) {
 						if (pricePoint.studentPriceGroup == studentPriceGroup) {
 							price = pricePoint.price;
+							if (pricePoint.hasOwnProperty("perStudentPrice")) {
+								if (state.studentCount) {
+									price = pricePoint.perStudentPrice * state.studentCount;
+								} else {
+									label = pricePoint.perStudentPrice.formatMoney(2) + " <br /> per student"
+								}
+							}
 						}
 					})
 				}
-				return price ? price.formatMoney(0) : "N/A";
+				if (price) {
+					return price.formatMoney(0)
+				} else {
+					return label ? label : "N/A";
+				}
+				
 			},
 		}
 	});

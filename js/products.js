@@ -355,47 +355,182 @@ var product = {
 			id: "gradeCam",
 			name: "GradeCam",
 			modal: "#classroom",
-			subtitle: "Only available with IO Assessment",
+			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
 			type: "solution",
-			prices: {}
+			prices: {
+				"Elementary or Junior High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1
+				}],
+				"High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1
+				}]
+			}
 		}, {
 			id: "k1",
 			name: "K-1",
 			modal: "#classroom",
-			subtitle: "Only available with IO Assessment",
+			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
 			type: "solution",
-			prices: {}
+			prices: {
+				"Elementary or Junior High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}],
+				"High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}]
+			}
 		}, {
 			id: "itemBank",
 			name: "Item Bank",
 			modal: "#classroom",
-			subtitle: "Only available with IO Assessment",
+			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
 			type: "solution",
-			prices: {}
+			prices: {
+				"Elementary or Junior High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.7
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.7
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.7
+				}],
+				"High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.7
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.7
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.7
+				}]
+			}
 		}, {
 			id: "quickChecks",
 			name: "Quick Checks",
 			modal: "#classroom",
-			subtitle: "Only available with IO Assessment",
+			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
 			type: "solution",
-			prices: {}
+			prices: {
+				"Elementary or Junior High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}],
+				"High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}]
+			}
 		}, {
 			id: "ngss",
 			name: "NGSS",
 			modal: "#classroom",
-			subtitle: "Only available with IO Assessment",
+			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
 			type: "solution",
-			prices: {}
+			prices: {
+				"Elementary or Junior High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}],
+				"High School": [{
+					studentPriceGroup: "Under 650 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "650 - 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}, {
+					studentPriceGroup: "Over 1500 Students",
+					price: null,
+					perStudentPrice: 1.35
+				}]
+			}
 		}, {
 			id: "qualityReview",
 			name: "Quality Review (QR) Prep",
