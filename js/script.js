@@ -55,6 +55,31 @@ $(document).ready(function() {
 		},
 		methods: {
 			submitOrder: function() {
+				var focusInput = function(input) {
+					$('html, body').animate({
+						scrollTop: input.offset().top - 50
+					}, 200, function() {
+						input.focus();
+					});
+				};
+
+				if (!state.studentCount) {
+					alert("Error: Please enter the number of students in your school");
+					return focusInput($("input.studentCount"));
+				}
+
+				var errors = [];
+				$("div.user-form input").each(function() {
+					if ($(this).val() == "") {
+						errors.push($(this).attr("name"));
+					}
+				});
+
+				if (errors.length > 0) {
+					alert("Please submit all required fields to continue: \n\n" + errors.join(", "));
+					return focusInput($("input[name='" + errors[0] + "']"));
+				}
+
 				var submission = {
 					userInfo: state.userInfo,
 					schoolType: state.schoolType,
@@ -65,6 +90,8 @@ $(document).ready(function() {
 					solutions: state.solutions.slice()
 				};
 
+				//TBD
+				//send the cart html with the user info
 				alert("Send server form email: \n\n" + JSON.stringify(submission, null, 4));
 			}
 		}
@@ -116,7 +143,7 @@ $(document).ready(function() {
 								name: "&nbsp;&bullet;&nbsp;" + item.name,
 								price: "-"
 							})
-						} else{
+						} else {
 							items.push({
 								name: item.name,
 								price: itemPrice.formatMoney(0)

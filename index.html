@@ -88,6 +88,7 @@
                 style="width: 30%; min-width: 100px;"
                 v-model.number="data.studentCount"
                 v-on:keyup="setStudentPriceGroup()"
+                class="studentCount"
                 title="Please enter the total number of students in your school" 
               />
             </span>
@@ -207,33 +208,33 @@
       <div class="span6">
         <div>
             DBN<br />
-            <input type="text" v-model="data.userInfo.DBN" placeholder="e.g. 12X345">
+            <input type="text" name="DBN" v-model="data.userInfo.DBN" placeholder="e.g. 12X345">
         </div>
         <div>
           School Name<br />
-          <input type="text" v-model="data.userInfo.school">
+          <input type="text" name="School Name" v-model="data.userInfo.school">
         </div>
         <div>
             First Name<br />
-            <input type="text" v-model="data.userInfo.firstName">
+            <input type="text" name="First Name" v-model="data.userInfo.firstName">
         </div>
         <div>
             Last Name<br />
-            <input type="text" v-model="data.userInfo.lastName">
+            <input type="text" name="Last Name" v-model="data.userInfo.lastName">
         </div>
       </div>
       <div class="span6">
         <div>
             Email<br />
-            <input type="text" v-model="data.userInfo.email">
+            <input type="text" name="Email" v-model="data.userInfo.email">
         </div>
         <div>
             Telephone<br />
-            <input type="text" v-model="data.userInfo.telephone">
+            <input type="text" name="Telephone" v-model="data.userInfo.telephone">
         </div>
         <div>
             Principal's Name<br />
-            <input type="text" v-model="data.userInfo.prinicpal">
+            <input type="text" name="Principal" v-model="data.userInfo.prinicpal">
         </div>
       </div>
     </div>  
