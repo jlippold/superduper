@@ -310,14 +310,15 @@ $(document).ready(function() {
 				var solutions = state.solutions.slice();
 				//remove all possible selections in that depend
 				//on this subpackage
-				solutions.forEach(function(itemId) {
+				for (var i = solutions.length - 1; i >= 0; i--) {
+					var itemId = solutions[i];
 					var item = getProduct(itemId);
 					if (item.depends == thisPackage.depends) {
 						var index = solutions.indexOf(itemId);
 						solutions.splice(index, 1);
 					}
-				});
-
+				}
+				
 				if (thisPackage.offerings) {
 					thisPackage.offerings.forEach(function(offering) {
 						var itemId = offering;
@@ -354,8 +355,7 @@ $(document).ready(function() {
 					if (item.valid.indexOf(state.schoolType) > -1) {
 						if (item.type == "solution") {
 							valid = true;
-							if (item.hasOwnProperty("depends") &&
-								state.solutions.indexOf(item.depends) == -1) {
+							if (item.hasOwnProperty("depends")) {
 								valid = false
 							}
 						}
@@ -449,6 +449,22 @@ $(document).ready(function() {
 		}
 	});
 
+	var SolutionsAddonList = SolutionsList.extend({
+		template: '#solution-addon-template',
+		data: function() {
+			return state;
+		},
+		computed: {
+			getAddons: function() {
+				return state.offerings.filter(function(item) {
+					return item.type == "solution" &&
+						item.valid.indexOf(state.schoolType) > -1 &&
+						item.hasOwnProperty("depends") &&
+						state.solutions.indexOf(item.depends) > -1;
+				});
+			}
+		}
+	});
 	vm = new Vue({
 		el: '#app',
 		components: {
@@ -456,6 +472,7 @@ $(document).ready(function() {
 			'solutions-list': SolutionsList,
 			'services-list': ServicesList,
 			'package-list': PackageList,
+			'solution-addon-list': SolutionsAddonList,
 			'sub-package-list': SubPackageList,
 			'user-form': UserForm,
 			'cart': Cart,

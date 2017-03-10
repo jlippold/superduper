@@ -33,14 +33,14 @@
     <div class="span6">
       <school-options></school-options>
       <solutions-list></solutions-list>
-      
-      <sub-package-list></sub-package-list>
+      <solution-addon-list></solution-addon-list>
+      <services-list></services-list>
     </div>
 
     <div class="span6" style="padding: 20px">
       <cart-button></cart-button>
       <package-list></package-list>
-      <services-list></services-list>
+      <sub-package-list></sub-package-list>
     </div>
   </div>
 
@@ -122,8 +122,9 @@
 </template>
 
 <template id="sub-packages-template">
-    <div v-if="canSubPackage()">
-      <h3>IO Assessment addon bundle</h3>
+    <div style="padding: 20px" v-if="canSubPackage()">
+      <h3>Assessment addon bundles</h3>
+      <p>The most popular packages at our best prices</p>
       <table class="table subpackages table-condensed client-table">
         <tr v-for="item in filteredList">
           <td>
@@ -140,6 +141,46 @@
     </div>
 </template>
 
+
+<template id="solution-addon-template">
+    <div style="padding: 20px" v-if="getAddons.length > 0">
+      <h3>Assessment addons</h3>
+      <table class="table h3 table-condensed client-table">
+        <tr v-for="item in getAddons">
+          <td>
+              <label>
+                <input  type="checkbox" 
+                        v-if="!item.radio"
+                        :disabled="item.disabled"
+                        v-model="solutions" 
+                        v-bind:value="item.id" 
+                        :checked="item.selected" 
+                        v-on:click="showState(item)"
+                /> 
+
+                <input  type="radio" 
+                        name="option" 
+                        v-if="item.radio"
+                        v-bind:value="item.id" 
+                        v-on:click="selectOption(item)"
+                /> 
+                <span>
+                  <a v-bind:href="item.modal" class="modalTrigger">
+                    {{ item.name }}
+                  </a>
+                  <br v-if="item.subtitle" />
+                  <em v-if="item.subtitle"> 
+                    {{item.subtitle}}
+                  </em>
+                </span>
+              </label>
+
+          </td>
+          <td v-html="priceForItem(item)"></td>
+        </tr>
+      </table>
+    </div>
+</template>
 
 <template id="cart-template">
   <div class="cart" v-if="data.checkout && data.solutions.length > 0">
