@@ -32,6 +32,19 @@ var product = {
 				offerings: ["classroom", ["insights", "talent"]],
 				prices: [{
 					totalStudents: "Under 650 Students",
+					price: 6500
+				}, {
+					totalStudents: "650 - 1500 Students",
+					price: 7000
+				}, {
+					totalStudents: "Over 1500 Students",
+					price: 7500
+				}]
+			}, {
+				name: "C1: IO Classroom, Compass and Assessment",
+				offerings: ["classroom", "compass", "assessment"],
+				prices: [{
+					totalStudents: "Under 650 Students",
 					price: 12500
 				}, {
 					totalStudents: "650 - 1500 Students",
@@ -41,8 +54,8 @@ var product = {
 					price: 14500
 				}]
 			}, {
-				name: "C1: IO Classroom, Compass and Assessment",
-				offerings: ["classroom", "compass", "assessment"],
+				name: "C2: IO Classroom, Compass, Insights or Talent",
+				offerings: ["classroom", "compass", ["insights", "talent"]],
 				prices: [{
 					totalStudents: "Under 650 Students",
 					price: 10000
@@ -54,8 +67,8 @@ var product = {
 					price: 11000
 				}]
 			}, {
-				name: "C2: IO Classroom, Compass, Insights or Talent",
-				offerings: ["classroom", "compass", ["insights", "talent"]],
+				name: "D1: IO Classroom, Compass, Assessment, Insights or Talent",
+				offerings: ["classroom", "compass", "assessment", ["insights", "talent"]],
 				prices: [{
 					totalStudents: "Under 650 Students",
 					price: 15000
@@ -67,8 +80,8 @@ var product = {
 					price: 18000
 				}]
 			}, {
-				name: "D1: IO Classroom, Compass, Assessment, Insights or Talent",
-				offerings: ["classroom", "compass", "assessment", ["insights", "talent"]],
+				name: "D2: IO Classroom, Compass, Insights and Talent",
+				offerings: ["classroom", "compass", "insights", "talent"],
 				prices: [{
 					totalStudents: "Under 650 Students",
 					price: 12500
@@ -80,8 +93,8 @@ var product = {
 					price: 14500
 				}]
 			}, {
-				name: "D2: IO Classroom, Compass, Insights and Talent",
-				offerings: ["classroom", "compass", "insights", "talent"],
+				name: "E: IO Classroom, Compass, Assessment, Insights, and Talent",
+				offerings: ["classroom", "compass", "assessment", "insights", "talent"],
 				prices: [{
 					totalStudents: "Under 650 Students",
 					price: 17500
@@ -91,19 +104,6 @@ var product = {
 				}, {
 					totalStudents: "Over 1500 Students",
 					price: 21500
-				}]
-			}, {
-				name: "E: IO Classroom, Compass, Assessment, Insights, and Talent",
-				offerings: ["classroom", "compass", "assessment", "insights", "talent"],
-				prices: [{
-					totalStudents: "Under 650 Students",
-					price: 21500
-				}, {
-					totalStudents: "650 - 1500 Students",
-					price: 24500
-				}, {
-					totalStudents: "Over 1500 Students",
-					price: 27500
 				}]
 			}, {
 				name: "F: IO Classroom, Compass, Assessment, Insights, Talent and Quality Review",
@@ -152,13 +152,13 @@ var product = {
 				offerings: ["classroom", "assessment"],
 				prices: [{
 					totalStudents: "Under 650 Students",
-					price: 10000
+					price: 9000
 				}, {
 					totalStudents: "650 - 1500 Students",
-					price: 11000
+					price: 10000
 				}, {
 					totalStudents: "Over 1500 Students",
-					price: 12500
+					price: 11000
 				}]
 			}, {
 				name: "C1: IO Classroom, Insights and Talent",
