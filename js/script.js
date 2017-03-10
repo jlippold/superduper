@@ -32,6 +32,16 @@ $(document).ready(function() {
 			return {
 				data: state
 			}
+		},
+		methods: {
+			setStudentPriceGroup: function() {
+				state.studentPriceGroup = "Under 650 Students"
+				if (state.studentCount >= 1500) {
+					state.studentPriceGroup = "Over 1500 Students";
+				} else if (state.studentCount >= 650) {
+					state.studentPriceGroup = "650 - 1500 Students"
+				}
+			}
 		}
 	});
 
@@ -120,19 +130,6 @@ $(document).ready(function() {
 			}
 		}
 	});
-
-	var StudentCountModal = Vue.extend({
-		template: '#student-count-modal',
-		data: function() {
-			return {
-				data: state
-			}
-		},
-		methods: {
-
-		}
-	});
-
 
 	var PackageList = Vue.extend({
 		template: '#packages-template',
@@ -335,6 +332,7 @@ $(document).ready(function() {
 							if (pricePoint.hasOwnProperty("perStudentPrice")) {
 								if (state.studentCount) {
 									price = pricePoint.perStudentPrice * state.studentCount;
+									label = price.formatMoney(0) + " at <br />" + pricePoint.perStudentPrice.formatMoney(2) + "/student"
 								} else {
 									label = pricePoint.perStudentPrice.formatMoney(2) + " <br /> per student"
 								}
@@ -342,12 +340,7 @@ $(document).ready(function() {
 						}
 					})
 				}
-				if (price) {
-					return price.formatMoney(0)
-				} else {
-					return label ? label : "N/A";
-				}
-				
+				return label || price.formatMoney(0);
 			},
 		}
 	});
@@ -360,8 +353,7 @@ $(document).ready(function() {
 			'package-list': PackageList,
 			'user-form': UserForm,
 			'cart': Cart,
-			'cart-button': CartButton,
-			'student-count-modal': StudentCountModal
+			'cart-button': CartButton
 		}
 	});
 

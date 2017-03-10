@@ -44,8 +44,6 @@
     </div>
   </div>
 
-  <student-count-modal></student-count-modal>
-
   <div class="modals">
 
     <!-- add more modal descriptions here -->
@@ -65,27 +63,9 @@
   </div>
 </div>
 
-<template id="student-count-modal">
-  <div class="modalNumberOfStudents modal hide fade" role="dialog" >
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3>Total Students</h3>
-    </div>
-    <div class="modal-body">
-      <p>Please enter the total number of students in your school</p>
-      <div>
-          <input type="text" v-model="data.studentCount" placeholder="e.g. 12X345">
-      </div>
-    </div>
-    <div class="modal-footer">
-      <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Save</button>
-    </div>
-  </div>
-</template>
-
 <template id="school-options-template">
   <div class="row-fluid school-options client-table-container">
-    <div class="span8" style="padding-left: 40px;">
+    <div class="span12" style="padding-left: 40px;">
       <h4>School Type</h4>
       <label>
         <input type="radio" name="schoolType" value="High School" v-model="data.schoolType">
@@ -95,23 +75,23 @@
         <input type="radio" name="schoolType" value="Elementary or Junior High School" v-model="data.schoolType">
         <span>Elementary or Junior High School (K-8)</span> 
       </label>
+      <h4>Number of Students</h4>
+      <label>
+          <input 
+            type="number" 
+            min="10" 
+            max="15000"
+            v-model.number="data.studentCount"
+            v-on:change="setStudentPriceGroup()"
+            title="Please enter the total number of students in your school" />
+      </label>
+      <label>
+          School Pricing model:
+            {{ data.studentPriceGroup }}
+      </label>
+
     </div>
 
-    <div class="span4">
-      <h4>Amount of Students</h4>
-      <label>
-        <input type="radio" name="students" v-model="data.studentPriceGroup" value="Under 650 Students">
-        <span>Under 650 Students</span>
-      </label>
-      <label>
-        <input type="radio" name="students" v-model="data.studentPriceGroup" value="650 - 1500 Students">
-        <span>650 - 1500 Students</span>
-      </label>
-      <label>
-        <input type="radio" name="students" v-model="data.studentPriceGroup" value="Over 1500 Students">
-        <span>Over 1500 Students</span>
-      </label>
-    </div>
   </div>
 </template>
 
