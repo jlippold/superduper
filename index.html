@@ -215,6 +215,10 @@
                 <a v-bind:href="item.modal" class="modalTrigger">
                   {{ item.name }}
                 </a>
+                <br v-if="item.subtitle" />
+                <em v-if="item.subtitle"> 
+                  {{item.subtitle}}
+                </em>
               </span>
             </label>
 

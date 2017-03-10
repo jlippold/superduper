@@ -220,6 +220,7 @@ var product = {
 			id: "classroom",
 			name: "IO Classroom",
 			modal: "#classroom",
+			subtitle: "FKA: Skedula, PupilPath, PADS",
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
@@ -248,6 +249,7 @@ var product = {
 			id: "compass",
 			name: "Compass",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School"],
 			type: "solution",
 			prices: {
@@ -266,6 +268,7 @@ var product = {
 			id: "insights",
 			name: "IO Insights",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
@@ -294,6 +297,7 @@ var product = {
 			id: "assessment",
 			name: "IO Assessment",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
@@ -322,6 +326,7 @@ var product = {
 			id: "talent",
 			name: "IO Talent",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
 			prices: {
@@ -350,6 +355,7 @@ var product = {
 			id: "gradeCam",
 			name: "GradeCam",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
@@ -358,6 +364,7 @@ var product = {
 			id: "k1",
 			name: "K-1",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
@@ -366,6 +373,7 @@ var product = {
 			id: "itemBank",
 			name: "Item Bank",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
@@ -374,6 +382,7 @@ var product = {
 			id: "quickChecks",
 			name: "Quick Checks",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
@@ -382,6 +391,7 @@ var product = {
 			id: "ngss",
 			name: "NGSS",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: ["solution3"],
 			type: "solution",
@@ -390,6 +400,7 @@ var product = {
 			id: "qualityReview",
 			name: "Quality Review (QR) Prep",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
 			prices: {
@@ -418,6 +429,7 @@ var product = {
 			id: "stars",
 			name: "STARS Program",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
 			prices: {
@@ -446,6 +458,7 @@ var product = {
 			id: "professionalDevelopmentx1",
 			name: "1 Professional Development Session",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withoutPackage",
 			prices: {
@@ -474,6 +487,7 @@ var product = {
 			id: "professionalDevelopmentx3",
 			name: "Block of 3 Professional Development Sessions",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withoutPackage",
 			prices: {
@@ -502,6 +516,7 @@ var product = {
 			id: "addedProfessionalDevelopmentx1",
 			name: "1 Professional Development Session",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withPackage",
 			prices: {
@@ -530,6 +545,7 @@ var product = {
 			id: "addedProfessionalDevelopmentx3",
 			name: "Block of 3 Professional Development Sessions",
 			modal: "#classroom",
+			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withPackage",
 			prices: {
