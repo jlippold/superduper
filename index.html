@@ -229,7 +229,14 @@
       <tr v-for="item in getServices">
         <td>
             <label>
-              <input type="checkbox" v-model="solutions" v-bind:value="item.id" :checked="checkStatus(item)"> 
+
+              <input  type="checkbox" 
+                      :disabled="item.disabled"
+                      v-model="solutions" 
+                      v-bind:value="item.id" 
+                      :checked="checkStatus(item)" 
+              /> 
+
               <span>
               {{ item.name }}
               </span>
