@@ -35,13 +35,19 @@ var isInPackage = function(package, itemId) {
 
 var getPriceForSolution = function(solution) {
 	var price = 0;
-	if (solution.prices && solution.prices.hasOwnProperty(state.schoolType)) {
-		solution.prices[state.schoolType].forEach(function(item) {
-			if (item.studentPriceGroup == state.studentPriceGroup) {
-				if (item.price == null) {
-					price = 0
+	var schoolType = state.schoolType;
+	var studentPriceGroup = state.studentPriceGroup;
+	if (solution.prices && solution.prices.hasOwnProperty(schoolType)) {
+		solution.prices[schoolType].forEach(function(pricePoint) {
+			if (pricePoint.studentPriceGroup == studentPriceGroup) {
+				if (pricePoint.hasOwnProperty("perStudentPrice")) {
+					if (state.studentCount) {
+						price = pricePoint.perStudentPrice * state.studentCount;
+					} else {
+						price = 0
+					}
 				} else {
-					price = item.price
+					price = pricePoint.price;
 				}
 			}
 		});
