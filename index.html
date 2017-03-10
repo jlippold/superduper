@@ -33,12 +33,14 @@
     <div class="span6">
       <school-options></school-options>
       <solutions-list></solutions-list>
+      
       <sub-package-list></sub-package-list>
     </div>
 
     <div class="span6" style="padding: 20px">
       <cart-button></cart-button>
       <package-list></package-list>
+      <services-list></services-list>
     </div>
   </div>
 
@@ -254,8 +256,11 @@
         <td v-html="priceForItem(item)"></td>
       </tr>
     </table>
+  </div>
+</template>
 
-    <p>&nbsp;</p>
+<template id="services-template">
+  <div style="padding: 20px">
     <h3>Services</h3>
     <table class="table services table-condensed client-table">
       <tr v-for="item in getServices">
@@ -279,7 +284,6 @@
     </table>
   </div>
 </template>
-
 
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

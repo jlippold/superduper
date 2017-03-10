@@ -348,24 +348,6 @@ $(document).ready(function() {
 			return state;
 		},
 		computed: {
-			getServices: function() {
-				return state.offerings.filter(function(item) {
-					var valid = false;
-					if (item.valid.indexOf(state.schoolType) > -1) {
-						if (item.type == "service") {
-							valid = true;
-						}
-						if (item.type == "withoutPackage" && state.package == null) {
-							valid = true;
-						}
-						if (state.package && item.type == "withPackage") {
-							valid = true;
-						}
-
-					}
-					return valid;
-				});
-			},
 			getSolutions: function() {
 				return state.offerings.filter(function(item) {
 					var valid = false;
@@ -440,11 +422,39 @@ $(document).ready(function() {
 		}
 	});
 
+	var ServicesList = SolutionsList.extend({
+		template: '#services-template',
+		data: function() {
+			return state;
+		},
+		computed: {
+			getServices: function() {
+				return state.offerings.filter(function(item) {
+					var valid = false;
+					if (item.valid.indexOf(state.schoolType) > -1) {
+						if (item.type == "service") {
+							valid = true;
+						}
+						if (item.type == "withoutPackage" && state.package == null) {
+							valid = true;
+						}
+						if (state.package && item.type == "withPackage") {
+							valid = true;
+						}
+
+					}
+					return valid;
+				});
+			}
+		}
+	});
+
 	vm = new Vue({
 		el: '#app',
 		components: {
 			'school-options': SchoolOptions,
 			'solutions-list': SolutionsList,
+			'services-list': ServicesList,
 			'package-list': PackageList,
 			'sub-package-list': SubPackageList,
 			'user-form': UserForm,
