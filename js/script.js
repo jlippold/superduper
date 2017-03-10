@@ -37,7 +37,7 @@ $(document).ready(function() {
 		methods: {
 			setStudentPriceGroup: function() {
 				state.studentPriceGroup = "Under 650 Students"
-				if (state.studentCount >= 1500) {
+				if (state.studentCount >= 1501) {
 					state.studentPriceGroup = "Over 1500 Students";
 				} else if (state.studentCount >= 650) {
 					state.studentPriceGroup = "650 - 1500 Students"
