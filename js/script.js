@@ -128,7 +128,7 @@ $(document).ready(function() {
 			checkout: function() {
 				state.checkout = true;
 				setTimeout(function() {
-					window.scrollTo(0, 0)
+					$("html, body").animate({ scrollTop: "0px" });
 				}, 1);
 			}
 		}
