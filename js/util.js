@@ -37,7 +37,7 @@ var getPriceForSolution = function(solution) {
 	var price = 0;
 	if (solution.prices && solution.prices.hasOwnProperty(state.schoolType)) {
 		solution.prices[state.schoolType].forEach(function(item) {
-			if (item.totalStudents == state.totalStudents) {
+			if (item.studentPriceGroup == state.studentPriceGroup) {
 				price = item.price
 			}
 		});
@@ -48,7 +48,7 @@ var getPriceForSolution = function(solution) {
 var getPriceForPackage = function(package) {
 	var price = 0;
 	package.prices.forEach(function(item) {
-		if (item.totalStudents == state.totalStudents) {
+		if (item.studentPriceGroup == state.studentPriceGroup) {
 			price = item.price
 		}
 	});

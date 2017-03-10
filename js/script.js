@@ -7,7 +7,8 @@ var vm;
 
 var state = {
 	schoolType: "High School",
-	totalStudents: "Under 650 Students",
+	studentPriceGroup: "Under 650 Students",
+	studentCount: null,
 	userInfo: {
 		DBN: "",
 		firstName: "",
@@ -46,7 +47,8 @@ $(document).ready(function() {
 				var submission = {
 					userInfo: state.userInfo,
 					schoolType: state.schoolType,
-					totalStudents: state.totalStudents,
+					studentPriceGroup: state.studentPriceGroup,
+					studentCount: state.studentCount,
 					package: state.package,
 					cost: state.cost,
 					solutions: state.solutions.slice()
@@ -119,6 +121,19 @@ $(document).ready(function() {
 		}
 	});
 
+	var StudentCountModal = Vue.extend({
+		template: '#student-count-modal',
+		data: function() {
+			return {
+				data: state
+			}
+		},
+		methods: {
+			
+		}
+	});
+	
+
 	var PackageList = Vue.extend({
 		template: '#packages-template',
 		data: function() {
@@ -143,10 +158,10 @@ $(document).ready(function() {
 		methods: {
 			priceForItem: function(prices) {
 				if (Array.isArray(prices)) {
-					var totalStudents = state.totalStudents;
+					var studentPriceGroup = state.studentPriceGroup;
 					var price;
 					prices.forEach(function(pricePoint) {
-						if (pricePoint.totalStudents == totalStudents) {
+						if (pricePoint.studentPriceGroup == studentPriceGroup) {
 							price = pricePoint.price;
 						}
 					});
@@ -299,12 +314,12 @@ $(document).ready(function() {
 				}
 			},
 			priceForItem: function(item) {
-				var totalStudents = state.totalStudents;
+				var studentPriceGroup = state.studentPriceGroup;
 				var schoolType = state.schoolType;
 				var price;
 				if (item.prices.hasOwnProperty(schoolType)) {
 					item.prices[schoolType].forEach(function(pricePoint) {
-						if (pricePoint.totalStudents == totalStudents) {
+						if (pricePoint.studentPriceGroup == studentPriceGroup) {
 							price = pricePoint.price;
 						}
 					})
@@ -322,7 +337,8 @@ $(document).ready(function() {
 			'package-list': PackageList,
 			'user-form': UserForm,
 			'cart': Cart,
-			'cart-button': CartButton
+			'cart-button': CartButton,
+			'student-count-modal': StudentCountModal
 		}
 	});
 

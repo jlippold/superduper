@@ -44,6 +44,8 @@
     </div>
   </div>
 
+  <student-count-modal></student-count-modal>
+
   <div class="modals">
     <div id="classroom" class="modal hide fade" role="dialog" >
       <div class="modal-header">
@@ -59,6 +61,24 @@
     </div>
   </div>
 </div>
+
+<template id="student-count-modal">
+  <div class="modalNumberOfStudents modal hide fade" role="dialog" >
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3>Total Students</h3>
+    </div>
+    <div class="modal-body">
+      <p>Please enter the total number of students in your school</p>
+      <div>
+          <input type="text" v-model="data.studentCount" placeholder="e.g. 12X345">
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Save</button>
+    </div>
+  </div>
+</template>
 
 <template id="school-options-template">
   <div class="row-fluid school-options client-table-container">
@@ -77,15 +97,15 @@
     <div class="span4">
       <h4>Amount of Students</h4>
       <label>
-        <input type="radio" name="students" v-model="data.totalStudents" value="Under 650 Students">
+        <input type="radio" name="students" v-model="data.studentPriceGroup" value="Under 650 Students">
         <span>Under 650 Students</span>
       </label>
       <label>
-        <input type="radio" name="students" v-model="data.totalStudents" value="650 - 1500 Students">
+        <input type="radio" name="students" v-model="data.studentPriceGroup" value="650 - 1500 Students">
         <span>650 - 1500 Students</span>
       </label>
       <label>
-        <input type="radio" name="students" v-model="data.totalStudents" value="Over 1500 Students">
+        <input type="radio" name="students" v-model="data.studentPriceGroup" value="Over 1500 Students">
         <span>Over 1500 Students</span>
       </label>
     </div>
@@ -115,7 +135,7 @@
 
     <h3>Cart</h3>
     <p>
-      {{data.schoolType}} {{data.totalStudents}}
+      {{data.schoolType}} {{data.studentPriceGroup}}
     </p>
     <table class="table cart table-condensed client-table">
       <tr v-for="item in listCart">
@@ -242,7 +262,7 @@
               /> 
 
               <span>
-              {{ item.name }}
+                {{ item.name }}
               </span>
             </label>
         </td>
