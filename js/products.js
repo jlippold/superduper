@@ -444,10 +444,10 @@ var product = {
 			}
 		}, {
 			id: "professionalDevelopmentx1",
-			name: "Professional Development Session",
+			name: "1 Professional Development Session",
 			modal: "#classroom",
 			valid: ["High School", "Elementary or Junior High School"],
-			type: "service",
+			type: "withoutPackage",
 			prices: {
 				"Elementary or Junior High School": [{
 					totalStudents: "Under 650 Students",
@@ -472,10 +472,10 @@ var product = {
 			}
 		}, {
 			id: "professionalDevelopmentx3",
-			name: "Block of 3 Professional Development",
+			name: "Block of 3 Professional Development Sessions",
 			modal: "#classroom",
 			valid: ["High School", "Elementary or Junior High School"],
-			type: "service",
+			type: "withoutPackage",
 			prices: {
 				"Elementary or Junior High School": [{
 					totalStudents: "Under 650 Students",
@@ -502,7 +502,8 @@ var product = {
 			id: "addedProfessionalDevelopmentx1",
 			name: "1 Professional Development Session",
 			modal: "#classroom",
-			type: "packageAdd",
+			valid: ["High School", "Elementary or Junior High School"],
+			type: "withPackage",
 			prices: {
 				"Elementary or Junior High School": [{
 					totalStudents: "Under 650 Students",
@@ -529,7 +530,8 @@ var product = {
 			id: "addedProfessionalDevelopmentx3",
 			name: "Block of 3 Professional Development Sessions",
 			modal: "#classroom",
-			type: "packageAdd",
+			valid: ["High School", "Elementary or Junior High School"],
+			type: "withPackage",
 			prices: {
 				"Elementary or Junior High School": [{
 					totalStudents: "Under 650 Students",

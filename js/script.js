@@ -242,7 +242,19 @@ $(document).ready(function() {
 		computed: {
 			getServices: function() {
 				return state.offerings.filter(function(item) {
-					return item.type == "service" && item.valid.indexOf(state.schoolType) > -1
+					var valid = false;
+					if (item.valid.indexOf(state.schoolType) > -1) {
+						if (item.type == "service") {
+							valid = true;
+						}
+						if (item.type == "withoutPackage" && state.package == null) {
+							valid = true;
+						}
+						if (state.package && item.type == "withPackage") {
+							valid = true;
+						}
+					}
+					return valid;
 				});
 			},
 			getSolutions: function() {
