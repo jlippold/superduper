@@ -268,7 +268,8 @@ $(document).ready(function() {
 				var list = this.subPackage.items.slice();
 				list.unshift({
 					name: "Build Your Own",
-					prices: "-"
+					prices: "-",
+					depends: "assessments"
 				});
 				return list;
 			}
@@ -277,7 +278,6 @@ $(document).ready(function() {
 			canSubPackage: function() {
 				return state.solutions.indexOf(this.subPackage.depends) > -1;
 			},
-
 			priceForSubPackage: function(subpackage) {
 
 				var studentPriceGroup = state.studentPriceGroup;
@@ -318,26 +318,23 @@ $(document).ready(function() {
 						solutions.splice(index, 1);
 					}
 				}
-				
+
 				if (thisPackage.offerings) {
 					thisPackage.offerings.forEach(function(offering) {
 						var itemId = offering;
 						var item = getProduct(itemId);
 
 						if (item) {
-
 							if (solutions.indexOf(itemId) == -1) {
 								solutions.push(itemId);
 							}
 						}
 					});
-
 					state.subPackage = thisPackage;
 					state.solutions = solutions.slice();
-
 				} else { //this isn't a package, it's build your own
 					state.subPackage = null;
-					state.solutions = solutions;
+					state.solutions = solutions.slice();
 				}
 			}
 		}
