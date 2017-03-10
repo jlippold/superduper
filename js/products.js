@@ -355,45 +355,45 @@ var product = {
 			id: "gradeCam",
 			name: "GradeCam",
 			modal: "#classroom",
-			subtitle: null,
+			subtitle: "Only available with IO Assessment",
 			valid: ["High School", "Elementary or Junior High School"],
-			depends: ["solution3"],
+			depends: "assessment",
 			type: "solution",
 			prices: {}
 		}, {
 			id: "k1",
 			name: "K-1",
 			modal: "#classroom",
-			subtitle: null,
+			subtitle: "Only available with IO Assessment",
 			valid: ["High School", "Elementary or Junior High School"],
-			depends: ["solution3"],
+			depends: "assessment",
 			type: "solution",
 			prices: {}
 		}, {
 			id: "itemBank",
 			name: "Item Bank",
 			modal: "#classroom",
-			subtitle: null,
+			subtitle: "Only available with IO Assessment",
 			valid: ["High School", "Elementary or Junior High School"],
-			depends: ["solution3"],
+			depends: "assessment",
 			type: "solution",
 			prices: {}
 		}, {
 			id: "quickChecks",
 			name: "Quick Checks",
 			modal: "#classroom",
-			subtitle: null,
+			subtitle: "Only available with IO Assessment",
 			valid: ["High School", "Elementary or Junior High School"],
-			depends: ["solution3"],
+			depends: "assessment",
 			type: "solution",
 			prices: {}
 		}, {
 			id: "ngss",
 			name: "NGSS",
 			modal: "#classroom",
-			subtitle: null,
+			subtitle: "Only available with IO Assessment",
 			valid: ["High School", "Elementary or Junior High School"],
-			depends: ["solution3"],
+			depends: "assessment",
 			type: "solution",
 			prices: {}
 		}, {

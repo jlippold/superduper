@@ -129,10 +129,10 @@ $(document).ready(function() {
 			}
 		},
 		methods: {
-			
+
 		}
 	});
-	
+
 
 	var PackageList = Vue.extend({
 		template: '#packages-template',
@@ -268,13 +268,24 @@ $(document).ready(function() {
 						if (state.package && item.type == "withPackage") {
 							valid = true;
 						}
+
 					}
 					return valid;
 				});
 			},
 			getSolutions: function() {
 				return state.offerings.filter(function(item) {
-					return item.type == "solution" && item.valid.indexOf(state.schoolType) > -1
+					var valid = false;
+					if (item.valid.indexOf(state.schoolType) > -1) {
+						if (item.type == "solution") {
+							valid = true;
+							if (item.hasOwnProperty("depends") &&
+								state.solutions.indexOf(item.depends) == -1) {
+								valid = false
+							}
+						}
+					}
+					return valid;
 				});
 			}
 		},
