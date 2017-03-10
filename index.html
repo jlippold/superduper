@@ -33,6 +33,7 @@
     <div class="span6">
       <school-options></school-options>
       <solutions-list></solutions-list>
+      <sub-package-list></sub-package-list>
     </div>
 
     <div class="span6" style="padding: 20px">
@@ -118,9 +119,28 @@
   </div>
 </template>
 
+<template id="sub-packages-template">
+    <div v-if="canSubPackage()">
+      <h3>IO Assessment addon bundle</h3>
+      <table class="table subpackages table-condensed client-table">
+        <tr v-for="item in filteredList">
+          <td>
+              <label>
+                <input type="radio" name="package"  
+                  v-on:click="selectPackage(item)"
+                   /> 
+                <span>{{ item.name }}</span>
+              </label>
+          </td>
+          <td v-html="priceForSubPackage(item)"></td>
+        </tr>
+      </table>
+    </div>
+</template>
+
+
 <template id="cart-template">
   <div class="cart" v-if="data.checkout && data.solutions.length > 0">
-
     <h3>Cart</h3>
     <p>
       {{data.schoolType}} {{data.studentPriceGroup}}

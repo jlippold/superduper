@@ -708,107 +708,58 @@ var product = {
 		}]
 	},
 	subPackage: {
-		"High School": {
-			items: [{
-				name: "Assessments A: Item Bank and Quick Check bundle",
-				offerings: ["itemBank", "quickChecks"],
-				prices: [{
-					studentPriceGroup: "Under 650 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "650 - 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "Over 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}]
+		depends: "assessment",
+		items: [{
+			name: "Assessments A: Item Bank and Quick Check bundle",
+			offerings: ["itemBank", "quickChecks"],
+			depends: "assessment",
+			prices: [{
+				studentPriceGroup: "Under 650 Students",
+				price: null,
+				perStudentPrice: 2.7
 			}, {
-				name: "Assessments C: Item Bank and NGSS",
-				offerings: ["itemBank", "ngss"],
-				prices: [{
-					studentPriceGroup: "Under 650 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "650 - 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "Over 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}]
+				studentPriceGroup: "650 - 1500 Students",
+				price: null,
+				perStudentPrice: 2.7
 			}, {
-				name: "Assessments D: Item Bank, Quick Checks and NGSS",
-				offerings: ["itemBank", "quickChecks", "ngss"],
-				prices: [{
-					studentPriceGroup: "Under 650 Students",
-					price: null,
-					perStudentPrice: 3.4
-				}, {
-					studentPriceGroup: "650 - 1500 Students",
-					price: null,
-					perStudentPrice: 3.4
-				}, {
-					studentPriceGroup: "Over 1500 Students",
-					price: null,
-					perStudentPrice: 3.4
-				}]
+				studentPriceGroup: "Over 1500 Students",
+				price: null,
+				perStudentPrice: 2.7
 			}]
-		},
-		"Elementary or Junior High School": {
-			items: [{
-				name: "Assessments A: Item Bank and Quick Check bundle",
-				offerings: ["itemBank", "quickChecks"],
-				prices: [{
-					studentPriceGroup: "Under 650 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "650 - 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "Over 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}]
+		}, {
+			name: "Assessments C: Item Bank and NGSS",
+			offerings: ["itemBank", "ngss"],
+			depends: "assessment",
+			prices: [{
+				studentPriceGroup: "Under 650 Students",
+				price: null,
+				perStudentPrice: 2.7
 			}, {
-				name: "Assessments C: Item Bank and NGSS",
-				offerings: ["itemBank", "ngss"],
-				prices: [{
-					studentPriceGroup: "Under 650 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "650 - 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}, {
-					studentPriceGroup: "Over 1500 Students",
-					price: null,
-					perStudentPrice: 2.7
-				}]
+				studentPriceGroup: "650 - 1500 Students",
+				price: null,
+				perStudentPrice: 2.7
 			}, {
-				name: "Assessments D: Item Bank, Quick Checks and NGSS",
-				offerings: ["itemBank", "quickChecks", "ngss"],
-				prices: [{
-					studentPriceGroup: "Under 650 Students",
-					price: null,
-					perStudentPrice: 3.4
-				}, {
-					studentPriceGroup: "650 - 1500 Students",
-					price: null,
-					perStudentPrice: 3.4
-				}, {
-					studentPriceGroup: "Over 1500 Students",
-					price: null,
-					perStudentPrice: 3.4
-				}]
+				studentPriceGroup: "Over 1500 Students",
+				price: null,
+				perStudentPrice: 2.7
 			}]
-		}
+		}, {
+			name: "Assessments D: Item Bank, Quick Checks and NGSS",
+			offerings: ["itemBank", "quickChecks", "ngss"],
+			depends: "assessment",
+			prices: [{
+				studentPriceGroup: "Under 650 Students",
+				price: null,
+				perStudentPrice: 3.4
+			}, {
+				studentPriceGroup: "650 - 1500 Students",
+				price: null,
+				perStudentPrice: 3.4
+			}, {
+				studentPriceGroup: "Over 1500 Students",
+				price: null,
+				perStudentPrice: 3.4
+			}]
+		}]
 	}
 };

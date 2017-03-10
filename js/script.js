@@ -19,6 +19,7 @@ var state = {
 	},
 	solutions: [], //selected products
 	package: null, //selected package
+	subPackage: null, //selected subpackage
 	offerings: [], //possible products for package
 	cost: "",
 	checkout: false
@@ -128,7 +129,9 @@ $(document).ready(function() {
 			checkout: function() {
 				state.checkout = true;
 				setTimeout(function() {
-					$("html, body").animate({ scrollTop: "0px" });
+					$("html, body").animate({
+						scrollTop: "0px"
+					});
 				}, 1);
 			}
 		}
@@ -138,7 +141,7 @@ $(document).ready(function() {
 		template: '#packages-template',
 		data: function() {
 			return {
-				data: product.packages
+				packages: product.packages
 			}
 		},
 		mounted: function() {
@@ -147,7 +150,7 @@ $(document).ready(function() {
 		computed: {
 			filteredList: function() {
 				var schoolType = state.schoolType;
-				var list = this.data[schoolType].items.slice();
+				var list = this.packages[schoolType].items.slice();
 				list.unshift({
 					name: "Build Your Own Package",
 					prices: "-"
@@ -249,6 +252,96 @@ $(document).ready(function() {
 		}
 	});
 
+	var SubPackageList = Vue.extend({
+		template: '#sub-packages-template',
+		data: function() {
+			return {
+				subPackage: product.subPackage
+			}
+		},
+		mounted: function() {
+			$("table.subpackages input:first").click();
+		},
+		computed: {
+			filteredList: function() {
+				var schoolType = state.schoolType;
+				var list = this.subPackage.items.slice();
+				list.unshift({
+					name: "Build Your Own",
+					prices: "-"
+				});
+				return list;
+			}
+		},
+		methods: {
+			canSubPackage: function() {
+				return state.solutions.indexOf(this.subPackage.depends) > -1;
+			},
+
+			priceForSubPackage: function(subpackage) {
+
+				var studentPriceGroup = state.studentPriceGroup;
+				var price, label;
+				if (Array.isArray(subpackage.prices)) {
+					subpackage.prices.forEach(function(pricePoint) {
+						if (pricePoint.studentPriceGroup == studentPriceGroup) {
+
+							price = pricePoint.price;
+							if (pricePoint.hasOwnProperty("perStudentPrice")) {
+								if (state.studentCount) {
+									price = pricePoint.perStudentPrice * state.studentCount;
+									label = price.formatMoney(0) + " at <br />" + pricePoint.perStudentPrice.formatMoney(2) + "/student"
+								} else {
+									label = pricePoint.perStudentPrice.formatMoney(2) + " <br /> per student"
+								}
+							}
+
+
+						}
+					});
+					return label || price.formatMoney(0);
+				} else {
+					return "-";
+				}
+
+			},
+			selectPackage: function(thisPackage) {
+
+				var solutions = state.solutions.slice();
+				//remove all possible selections in that depend
+				//on this subpackage
+				solutions.forEach(function(itemId) {
+					var item = getProduct(itemId);
+					if (item.depends == thisPackage.depends) {
+						var index = solutions.indexOf(itemId);
+						solutions.splice(index, 1);
+					}
+				});
+
+				if (thisPackage.offerings) {
+					thisPackage.offerings.forEach(function(offering) {
+						var itemId = offering;
+						var item = getProduct(itemId);
+
+						if (item) {
+
+							if (solutions.indexOf(itemId) == -1) {
+								solutions.push(itemId);
+							}
+						}
+					});
+
+					state.subPackage = thisPackage;
+					state.solutions = solutions.slice();
+
+				} else { //this isn't a package, it's build your own
+					state.subPackage = null;
+					state.solutions = solutions;
+				}
+			}
+		}
+	});
+
 	var SolutionsList = Vue.extend({
 		template: '#solutions-template',
 		data: function() {
@@ -292,7 +385,6 @@ $(document).ready(function() {
 		updated: function() {
 			$("a.modalTrigger").bind("click", function() {
 				var target = $(this).attr("href");
-				console.log(target);
 				$(target).modal('show');
 				return false;
 			});
@@ -302,7 +394,7 @@ $(document).ready(function() {
 				return state.solutions.indexOf(item.id) > -1
 			},
 			showState: function(item) {
-				console.log(state.solutions);
+				//console.log(state.solutions);
 			},
 			selectOption: function(item) {
 				var solutions = state.solutions.slice();
@@ -354,6 +446,7 @@ $(document).ready(function() {
 			'school-options': SchoolOptions,
 			'solutions-list': SolutionsList,
 			'package-list': PackageList,
+			'sub-package-list': SubPackageList,
 			'user-form': UserForm,
 			'cart': Cart,
 			'cart-button': CartButton
