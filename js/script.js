@@ -494,12 +494,31 @@ $(document).ready(function() {
 		},
 		computed: {
 			getAddons: function() {
-				return state.offerings.filter(function(item) {
+				var filtered = state.offerings.filter(function(item) {
 					return item.type == "solution" &&
 						item.valid.indexOf(state.schoolType) > -1 &&
 						item.hasOwnProperty("depends") &&
 						state.solutions.indexOf(item.depends) > -1;
 				});
+
+				//reset all the checkboxes
+				filtered.forEach(function(item) {
+					item.selected = false;
+					item.disabled = false;
+				});
+
+				// turn package items to radios
+				if (state.subPackage) {
+					state.subPackage.offerings.forEach(function(offering) {
+						filtered.forEach(function(item) {
+							if (item.id == offering) {
+								item.selected = true;
+								item.disabled = true;
+							}
+						});
+					});
+				}
+				return filtered;
 			}
 		}
 	});

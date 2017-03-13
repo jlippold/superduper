@@ -278,12 +278,6 @@
                         v-on:click="showState(item)"
                 /> 
 
-                <input  type="radio" 
-                        name="option" 
-                        v-if="item.radio"
-                        v-bind:value="item.id" 
-                        v-on:click="selectOption(item)"
-                /> 
                 <span>
 
                   <a v-if="item.href.substring(0,1) == '#'" v-bind:href="item.href" class="modalTrigger">
