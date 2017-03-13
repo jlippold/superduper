@@ -219,7 +219,7 @@ var product = {
 		items: [{
 			id: "classroom",
 			name: "IO Classroom",
-			modal: "#classroom",
+			href: "https://ioeducation.com/product/classroom/",
 			subtitle: "FKA: Skedula, PupilPath, PADS",
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
@@ -248,7 +248,7 @@ var product = {
 		}, {
 			id: "compass",
 			name: "Compass",
-			modal: "#classroom",
+			href: "https://ioeducation.com/product/insights/",
 			subtitle: null,
 			valid: ["High School"],
 			type: "solution",
@@ -267,7 +267,7 @@ var product = {
 		}, {
 			id: "insights",
 			name: "IO Insights",
-			modal: "#classroom",
+			href: "https://ioeducation.com/product/insights/",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
@@ -296,7 +296,7 @@ var product = {
 		}, {
 			id: "assessment",
 			name: "IO Assessment",
-			modal: "#classroom",
+			href: "https://ioeducation.com/product/assessment/",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
@@ -325,7 +325,7 @@ var product = {
 		}, {
 			id: "talent",
 			name: "IO Talent",
-			modal: "#classroom",
+			href: "https://ioeducation.com/product/talent/",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "solution",
@@ -354,7 +354,7 @@ var product = {
 		}, {
 			id: "gradeCam",
 			name: "GradeCam",
-			modal: "#classroom",
+			href: "#gradeCam",
 			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
@@ -390,7 +390,7 @@ var product = {
 		}, {
 			id: "k1",
 			name: "K-1",
-			modal: "#classroom",
+			href: "#K-1",
 			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
@@ -426,7 +426,7 @@ var product = {
 		}, {
 			id: "itemBank",
 			name: "Item Bank",
-			modal: "#classroom",
+			href: "#itemBank",
 			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
@@ -462,7 +462,7 @@ var product = {
 		}, {
 			id: "quickChecks",
 			name: "Quick Checks",
-			modal: "#classroom",
+			href: "#quickChecks",
 			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
@@ -498,7 +498,7 @@ var product = {
 		}, {
 			id: "ngss",
 			name: "NGSS",
-			modal: "#classroom",
+			href: "#ngss",
 			subtitle: "IO Assessment addon item",
 			valid: ["High School", "Elementary or Junior High School"],
 			depends: "assessment",
@@ -534,7 +534,7 @@ var product = {
 		}, {
 			id: "qualityReview",
 			name: "Quality Review (QR) Prep",
-			modal: "#classroom",
+			href: "#qr",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
@@ -563,7 +563,7 @@ var product = {
 		}, {
 			id: "stars",
 			name: "STARS Program",
-			modal: "#classroom",
+			href: null,
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "service",
@@ -592,7 +592,7 @@ var product = {
 		}, {
 			id: "professionalDevelopmentx1",
 			name: "1 Professional Development Session",
-			modal: "#classroom",
+			href: "#pd",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withoutPackage",
@@ -621,7 +621,7 @@ var product = {
 		}, {
 			id: "professionalDevelopmentx3",
 			name: "Block of 3 Professional Development Sessions",
-			modal: "#classroom",
+			href: "#pd",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withoutPackage",
@@ -650,7 +650,7 @@ var product = {
 		}, {
 			id: "addedProfessionalDevelopmentx1",
 			name: "1 Professional Development Session",
-			modal: "#classroom",
+			href: "#pd",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withPackage",
@@ -679,7 +679,7 @@ var product = {
 		}, {
 			id: "addedProfessionalDevelopmentx3",
 			name: "Block of 3 Professional Development Sessions",
-			modal: "#classroom",
+			href: "#pd",
 			subtitle: null,
 			valid: ["High School", "Elementary or Junior High School"],
 			type: "withPackage",

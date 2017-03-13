@@ -47,19 +47,138 @@
   <div class="modals">
 
     <!-- add more modal descriptions here -->
-
-    <div id="classroom" class="modal hide fade" role="dialog" >
+    <div id="K-1" class="modal hide fade" role="dialog" >
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3>Some product name</h3>
+        <h3>K-1</h3>
       </div>
       <div class="modal-body">
-        <p>Wow, such a great product here! Must buy</p>
+        <p>
+          Kindergartners and first 
+          graders need assessments 
+          that are developmentally 
+          appropriate. That’s why our 
+          124 assessments incorporate 
+          the observation of individual 
+          students and small groups. 
+        </p>
+        <p>For more info visit <a href="http://fluence.net/" target="_blank">fluence.net</a></p>
       </div>
       <div class="modal-footer">
         <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
       </div>
     </div>
+
+   <div id="itemBank" class="modal hide fade" role="dialog" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Item Bank</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+            College &amp; Career-ready 
+            assessment content for math 
+            and ELA in grades 2 through 
+            high school includes more 
+            than 35,000 items and 1,500 
+            complex texts.
+        </p>
+        <p>For more info visit <a href="http://fluence.net/" target="_blank">fluence.net</a></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+   <div id="quickChecks" class="modal hide fade" role="dialog" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Quick Checks</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+            636 fixed-form Quick Checks 
+            address the key instructional 
+            concepts embedded in College 
+            &amp; Career-ready standards 
+            (clusters for math, staircase 
+            of text complexity for ELA). 
+            Each Quick Check includes 
+            five to seven items, including 
+            constructed response.
+        </p>
+        <p>For more info visit <a href="http://fluence.net/" target="_blank">fluence.net</a></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+   <div id="ngss" class="modal hide fade" role="dialog" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>NGSS</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+          To help districts address 
+          the three dimensions of 
+          science learning, Fluence 
+          has developed pre-built 
+          assessments aligned to 
+          the instructional segments 
+          described in the NGSS bundles.
+        </p>
+        <p>For more info visit <a href="http://fluence.net/" target="_blank">fluence.net</a></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+   <div id="pd" class="modal hide fade" role="dialog" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Professional Development</h3>
+      </div>
+      <div class="modal-body">
+        <p>School Based Teacher Trainers we will provide face to face training development series covering administrative overview, system use, navigation and data analysis, progress report analysis, graduation tracking, teacher progress and accountability.  Onsite (face-to-face) trainings allow new users an opportunity to explore and engage with the system under the direct guidance of a certified trainer.  These one-day trainings include: research overview, step-by-step instruction on data collection and analysis, and technical guidance and support.  </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+   <div id="qr" class="modal hide fade" role="dialog" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Quality Review Preparation</h3>
+      </div>
+      <div class="modal-body">
+        <p>Quality Review Evaluator will help schools learn to evaluate data in their system, demonstrate how the data can be used to drive instruction and strengthening educators’ skills in assessing student, teacher and administration needs.  The team will work with schools to provide a well-rounded perspective of the way in which schools can use information about outcomes to guide teaching, set goals for improvement, and make adjustments. </p>
+        <p>Quality Review Evaluator will assist schools to break down complex student data to inform and support instruction, professional development, curriculum planning, accountability, and policy.  Making it easy to view, assess and cross-reference any data you choose to reveal the statistics, trends, challenges and successes your has accomplished for presentation for your QR evaluation .  Team members will provide helpful suggestions along with a full walk through of the Quality Review Process.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
+   <div id="gradeCam" class="modal hide fade" role="dialog" >
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Grade Cam</h3>
+      </div>
+      <div class="modal-body">
+        <p>
+          Grade assessments from your smartphone, tablet, webcam or document camera.
+        </p>
+        <p>For more info visit <a href="https://gradecam.com/" target="_blank">gradecam.com</a></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn form-button" data-dismiss="modal" aria-hidden="true">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -166,9 +285,17 @@
                         v-on:click="selectOption(item)"
                 /> 
                 <span>
-                  <a v-bind:href="item.modal" class="modalTrigger">
+
+                  <a v-if="item.href.substring(0,1) == '#'" v-bind:href="item.href" class="modalTrigger">
                     {{ item.name }}
                   </a>
+                  <span v-else-if="item.href == null">
+                    {{ item.name }}
+                  </span>
+                  <a v-else="item.href" v-bind:href="item.href" target="_blank">
+                    {{ item.name }}
+                  </a>
+                  
                   <br v-if="item.subtitle" />
                   <em v-if="item.subtitle"> 
                     {{item.subtitle}}
@@ -284,9 +411,17 @@
                       v-on:click="selectOption(item)"
               /> 
               <span>
-                <a v-bind:href="item.modal" class="modalTrigger">
+
+                <a v-if="item.href.substring(0,1) == '#'" v-bind:href="item.href" class="modalTrigger">
                   {{ item.name }}
                 </a>
+                <span v-else-if="item.href == null">
+                  {{ item.name }}
+                </span>
+                <a v-else="item.href" v-bind:href="item.href" target="_blank">
+                  {{ item.name }}
+                </a>
+
                 <br v-if="item.subtitle" />
                 <em v-if="item.subtitle"> 
                   {{item.subtitle}}
@@ -316,9 +451,16 @@
                       :checked="checkStatus(item)" 
               /> 
 
-                <a v-bind:href="item.modal" class="modalTrigger">
+                <a v-if="item.href && item.href.substring(0,1) == '#'" v-bind:href="item.href" class="modalTrigger">
                   {{ item.name }}
                 </a>
+                <span v-else-if="item.href == null">
+                  {{ item.name }}
+                </span>
+                <a v-else="item.href" v-bind:href="item.href" target="_blank">
+                  {{ item.name }}
+                </a>
+
                 <br v-if="item.subtitle" />
                 <em v-if="item.subtitle"> 
                   {{item.subtitle}}
